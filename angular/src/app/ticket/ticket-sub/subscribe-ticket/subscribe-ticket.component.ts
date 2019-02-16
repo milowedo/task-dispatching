@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {LongPoll} from '../../globals/LongPoll';
-import {Employee} from '../../entities/employee.model';
-import {Ticket} from '../../entities/ticket.model';
+import {LongPoll} from '../../../globals/LongPoll';
+import {Employee} from '../../../entities/employee.model';
+import {Ticket} from '../../../entities/ticket.model';
 
 @Component({
   selector: 'app-subscribe-ticket',

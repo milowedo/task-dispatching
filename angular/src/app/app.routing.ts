@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {EmployeeComponent} from './employee/employee.component';
 import {TicketListComponent} from './ticket/ticket-list/ticket-list.component';
-import {TicketSubComponent} from './ticket-sub/ticket-sub.component';
+import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
 
 const appRoutes = [
   {path: 'employeeSub', component: EmployeeComponent },

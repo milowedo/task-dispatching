@@ -6,22 +6,20 @@ import {DEFAULT_TIMEOUT, HttpRequestInterceptor} from './request-interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import {DropdownDirective} from './directives/dropdown.directive';
-import { GetEmployeeComponent } from './employee/get-employee/get-employee.component';
 import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscribe-employee.component';
 import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {AppRoutingModule} from './app.routing';
 import { TicketComponent } from './ticket/ticket.component';
-import { ChangeTicketComponent } from './ticket/change-ticket/change-ticket.component';
-import { SubscribeTicketComponent } from './ticket/subscribe-ticket/subscribe-ticket.component';
+import { ChangeTicketComponent } from './ticket/ticket-sub/change-ticket/change-ticket.component';
+import { SubscribeTicketComponent } from './ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
-import { TicketSubComponent } from './ticket-sub/ticket-sub.component';
+import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubscribeEmployeeComponent,
-    GetEmployeeComponent,
     ChangeEmployeeComponent,
     HeaderComponent,
     DropdownDirective,
