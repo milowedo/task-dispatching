@@ -3,12 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {HttpResponseInterceptor} from './response-interceptor';
 import {DEFAULT_TIMEOUT, HttpRequestInterceptor} from './request-interceptor';
-import {TokenStorage} from './TokenStorage';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-
 import { HeaderComponent } from './header/header.component';
 import {DropdownDirective} from './directives/dropdown.directive';
-
 import { GetEmployeeComponent } from './employee/get-employee/get-employee.component';
 import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscribe-employee.component';
 import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
@@ -41,14 +38,11 @@ import { TicketSubComponent } from './ticket-sub/ticket-sub.component';
     AppRoutingModule
   ],
   providers: [
-    TokenStorage,
     [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }],
     [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }],
-    {
-      provide: HTTP_INTERCEPTORS,
+    {provide: HTTP_INTERCEPTORS,
       useClass: HttpResponseInterceptor,
-      multi: true
-    },
+      multi: true},
 
   ],
   bootstrap: [AppComponent]

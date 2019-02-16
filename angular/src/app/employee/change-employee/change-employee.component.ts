@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {api_address} from '../../globals/globals';
 
 @Component({
   selector: 'app-change-employee',
   templateUrl: './change-employee.component.html'
 })
+
 export class ChangeEmployeeComponent{
 
-  constructor(private httpClient:HttpClient){}
+  constructor(private httpClient: HttpClient){}
 
   employeeId: string = '5';
 
   updateProfile() {
-    let num: string =  'http://localhost:8080/employee/trigger/' + this.employeeId;
+    let num: string =  api_address + 'employee/trigger/' + this.employeeId;
     this.httpClient.get(num)
       .subscribe(
         (data: any) => {

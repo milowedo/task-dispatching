@@ -3,19 +3,19 @@ import {HttpClient} from '@angular/common/http';
 import {EventEmitter, Injectable} from '@angular/core';
 
 @Injectable()
-export class TicketService{
+export class TicketService {
 
   private tickets: Ticket[] = [];
   ticketsChanged = new EventEmitter<Ticket[]>();
   ticketClicked = new EventEmitter<Ticket>();
 
 
-  constructor(private httpClient: HttpClient){};
+  constructor(private httpClient: HttpClient) {}
 
-  public fetchAllTickets(){
+  public fetchAllTickets() {
     this
       .httpClient
-      .get<Ticket[]>("http://localhost:8080/ticket/all")
+      .get<Ticket[]>('http://localhost:8080/longpolling_war_exploded/ticket/all')
       .subscribe(
         data => this.setTickets(data)
       );

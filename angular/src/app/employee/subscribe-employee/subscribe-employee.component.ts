@@ -1,18 +1,18 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {LongPoll} from '../../employee/subscribe-employee/LongPoll';
+import {Component, Inject} from '@angular/core';
 import {Employee} from '../../entities/employee.model';
-import {Ticket} from '../../entities/ticket.model';
+import {LongPoll} from '../../globals/LongPoll';
 
 @Component({
-  selector: 'app-subscribe-ticket',
-  templateUrl: './subscribe-ticket.component.html',
+  selector: 'app-subscribe-employee',
+  templateUrl: './subscribe-employee.component.html',
   providers: [LongPoll],
 })
-export class SubscribeTicketComponent {
-  received:Ticket  = null;
+export class SubscribeEmployeeComponent {
+
+  received:Employee  = null;
   subscribing: boolean = false;
-  CALL: string =  '/ticket/subscribe';
-  URI:string = 'http://localhost:8080';
+  CALL: string =  '/employee/subscribe';
+  URI:string = 'http://localhost:8080/longpolling_war_exploded';
 
   constructor(@Inject(LongPoll) private longPoll: LongPoll){
     longPoll.setUri(this.URI);

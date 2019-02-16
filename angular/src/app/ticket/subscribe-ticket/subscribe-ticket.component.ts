@@ -1,18 +1,17 @@
-import {Component, Inject} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Component, Inject, OnInit} from '@angular/core';
+import {LongPoll} from '../../globals/LongPoll';
 import {Employee} from '../../entities/employee.model';
-import {LongPoll} from './LongPoll';
+import {Ticket} from '../../entities/ticket.model';
 
 @Component({
-  selector: 'app-subscribe-employee',
-  templateUrl: './subscribe-employee.component.html',
+  selector: 'app-subscribe-ticket',
+  templateUrl: './subscribe-ticket.component.html',
   providers: [LongPoll],
 })
-export class SubscribeEmployeeComponent {
-
-  received:Employee  = null;
+export class SubscribeTicketComponent {
+  received:Ticket  = null;
   subscribing: boolean = false;
-  CALL: string =  '/employee/subscribe';
+  CALL: string =  '/ticket/subscribe';
   URI:string = 'http://localhost:8080';
 
   constructor(@Inject(LongPoll) private longPoll: LongPoll){
