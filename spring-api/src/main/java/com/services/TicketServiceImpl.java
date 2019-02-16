@@ -21,15 +21,22 @@ public class TicketServiceImpl extends ServicePoll implements TicketServiceInter
 
     @Override
     @Transactional
-    public void addTicket(Ticket ticket) {
-        ticketDaoInterface.addTicket(ticket);
+    public int addTicket(Ticket ticket) {
+        int id = ticketDaoInterface.addTicket(ticket);
         this.notifyOfChange(ticket);
+        return id;
     }
 
     @Override
     @Transactional
     public Ticket getTicket(int ticketID) {
         return ticketDaoInterface.getTicket(ticketID);
+    }
+
+    @Override
+    @Transactional
+    public void deleteTicket(int ticketID){
+        ticketDaoInterface.deleteTicket(ticketID);
     }
 
     @Override

@@ -37,6 +37,7 @@ public class TicketRestController {
                 ticketService);
     }
 
+    //fake update to make the overseer return data he is waiting for
     @NotNull
     @GetMapping("/trigger/{ticketID}")
     public ResponseEntity<?> updateTicket(@PathVariable("ticketID") int ticketID){
@@ -45,13 +46,20 @@ public class TicketRestController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/ticket/{ticketID}")
+    @GetMapping("/{ticketID}")
     public ResponseEntity<Ticket> getTicket(@PathVariable("ticketID") int ticketID){
         Ticket returnedTicket = ticketService.getTicket(ticketID);
-        if(returnedTicket !=null){
+        if(returnedTicket != null){
             return ResponseEntity.ok().body(returnedTicket);
         }
         else throw new EmployeeNotFoundException("Employee not found: " + ticketID);
+    }
+
+    @PostMapping("/new")
+    public ResponseEntity<?> addTicket(@RequestBody Ticket ticket){
+        System.out.println(ticket.toString());
+        int id = ticketService.addTicket(ticket);
+        return ResponseEntity.ok().body(id);
     }
 
     @GetMapping("/all")
@@ -59,5 +67,9 @@ public class TicketRestController {
         return ResponseEntity.ok().body(ticketService.getAllTickets());
     }
 
-
+    @DeleteMapping("delete/{ticketID}")
+    public ResponseEntity<?> deleteTicket(@PathVariable("ticketID") int ticketID){
+        ticketService.deleteTicket(ticketID);
+        return ResponseEntity.ok().body("Ticket with id of "+ ticketID +" has been deleted");
+    }
 }

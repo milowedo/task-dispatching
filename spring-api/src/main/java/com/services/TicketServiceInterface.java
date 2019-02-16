@@ -5,7 +5,8 @@ import com.entity.Ticket;
 import java.util.List;
 
 public interface TicketServiceInterface extends ServiceInterface {
-    void addTicket(Ticket ticket);
+    int addTicket(Ticket ticket);
     Ticket getTicket(int ticketID);
     List<Ticket> getAllTickets();
+    void deleteTicket(int ticketID);
 }
