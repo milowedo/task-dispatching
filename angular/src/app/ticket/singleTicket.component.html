@@ -1,10 +1,16 @@
 <a
   style="cursor: pointer"
   class="list-group-item clearfix"
-  (click)="ticketClicked()">
+  (click)="ticketSelected()">
   <div class="pull-left">
-    <h4 class="list-group-item-heading" *ngIf="true">{{(ticket.ticketStatus)}}</h4>
-    <p class="list-group-item-text">{{ticket.timeCreated}}</p>
+    <h4 class="list-group-item-heading" *ngIf="true">{{(ticket.ticketType)}}</h4>
+    <h5 class="list-group-item-text">STATUS: {{ticket.ticketStatus}}</h5>
+
+    <p *ngIf="isSelected" ><br>description:</p>
+    <p *ngIf="isSelected" class="list-group-item">{{ticket.descriptionGist}}</p>
+
+    <p *ngIf="isSelected" class="list-group-item-text"><br>{{dateInString}}</p>
   </div>
+
 </a>
 

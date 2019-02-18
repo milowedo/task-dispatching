@@ -32,4 +32,7 @@ public class Ticket extends Resolvable {
     @Column(name = "time_created")
     @Temporal(TemporalType.TIMESTAMP)
     private Date timeCreated;
+
+    @Column(name = "type")
+    private String ticketType;
 }

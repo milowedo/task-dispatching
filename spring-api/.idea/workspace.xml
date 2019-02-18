@@ -7,13 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="981687e6-c5b7-4943-890a-abac6d96231d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/change-ticket/change-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/change-ticket/change-ticket.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/ticket-sub.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/ticket-sub.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+            <state relative-caret-position="458">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -138,8 +131,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="98" />
+    <option name="y" value="-21" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -234,7 +228,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550501412938" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550508681864" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/jaxrs-ri-JERSEY-LIB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -344,15 +338,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550346542503</updated>
-      <workItem from="1550346543909" duration="22967000" />
+      <workItem from="1550346543909" duration="22996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22967000" />
+    <option name="totallyTimeSpent" value="22996000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="816" y="269" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -561,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="458">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
         </state>
       </provider>
     </entry>

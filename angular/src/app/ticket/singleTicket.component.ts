@@ -9,12 +9,15 @@ import {Ticket} from '../entities/ticket.model';
 })
 export class SingleTicketComponent {
 
+  protected isSelected: boolean = false;
   @Input() ticket : Ticket;
+  protected dateInString : String;
 
   constructor(private ticketService: TicketService) { }
 
-  ticketClicked(){
-    this.ticket.timeCreated = new Date(this.ticket.timeCreated);
-    this.ticketService.ticketClicked.emit(this.ticket);
+  ticketSelected(){
+    let temp:Date = new Date(this.ticket.timeCreated);
+    this.dateInString = temp.toLocaleTimeString() +" "+ temp.toDateString();
+    this.isSelected = !this.isSelected;
   }
 }
