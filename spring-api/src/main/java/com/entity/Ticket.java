@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
@@ -29,6 +30,6 @@ public class Ticket extends Resolvable {
     private String descriptionGist;
 
     @Column(name = "time_created")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date timeCreated;
 }

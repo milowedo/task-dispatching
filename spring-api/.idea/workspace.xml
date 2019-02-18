@@ -7,17 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="981687e6-c5b7-4943-890a-abac6d96231d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/change-ticket/change-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/change-ticket/change-ticket.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/ticket-sub.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-sub/ticket-sub.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-scripts/01-create-user.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-scripts/02-customer-tracker.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-scripts/fixingIndices.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql-scripts/fixingIndices.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/restController/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restController/EmployeeRestController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
@@ -59,6 +56,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="28">
               <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -109,12 +115,12 @@
         <option value="$PROJECT_DIR$/sql-scripts/fixingIndices.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Ticket_detail.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/ticketDetail.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Team.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/restController/EmployeeRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Employee.java" />
         <option value="$PROJECT_DIR$/sql-scripts/copmapny_script.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" />
       </list>
     </option>
   </component>
@@ -133,7 +139,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -228,7 +234,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550448003931" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550501412938" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/jaxrs-ri-JERSEY-LIB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -338,15 +344,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550346542503</updated>
-      <workItem from="1550346543909" duration="20486000" />
+      <workItem from="1550346543909" duration="22967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20486000" />
+    <option name="totallyTimeSpent" value="22967000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="575" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -356,7 +362,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Persistence" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.56126916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34901533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.32932165" />
       <window_info anchor="bottom" id="Spring" />
@@ -497,13 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/services/EmployeeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -529,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql-scripts/fixingIndices.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -550,6 +542,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -557,6 +556,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
         </state>
       </provider>
     </entry>

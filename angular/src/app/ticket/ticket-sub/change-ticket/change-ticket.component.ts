@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {api_address} from '../../../globals/globals';
 
 @Component({
   selector: 'app-change-ticket',
@@ -12,7 +13,7 @@ export class ChangeTicketComponent{
   ticketId: string = '3';
 
   updateProfile() {
-    let address: string =  'http://localhost:8080/ticket/trigger/' + this.ticketId;
+    let address: string =  api_address+'ticket/trigger/' + this.ticketId;
     this.httpClient.get(address)
       .subscribe(
         (data: any) => {

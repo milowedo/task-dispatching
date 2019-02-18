@@ -10,7 +10,7 @@ import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscr
 import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {AppRoutingModule} from './app.routing';
-import { TicketComponent } from './ticket/ticket.component';
+import { SingleTicketComponent } from './ticket/singleTicket.component';
 import { ChangeTicketComponent } from './ticket/ticket-sub/change-ticket/change-ticket.component';
 import { SubscribeTicketComponent } from './ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
@@ -24,7 +24,7 @@ import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
     HeaderComponent,
     DropdownDirective,
     EmployeeComponent,
-    TicketComponent,
+    SingleTicketComponent,
     ChangeTicketComponent,
     SubscribeTicketComponent,
     TicketListComponent,

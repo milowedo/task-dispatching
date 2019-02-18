@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {LongPoll} from '../../../globals/LongPoll';
-import {Employee} from '../../../entities/employee.model';
 import {Ticket} from '../../../entities/ticket.model';
+import {api_address} from '../../../globals/globals';
 
 @Component({
   selector: 'app-subscribe-ticket',
@@ -11,8 +11,8 @@ import {Ticket} from '../../../entities/ticket.model';
 export class SubscribeTicketComponent {
   received:Ticket  = null;
   subscribing: boolean = false;
-  CALL: string =  '/ticket/subscribe';
-  URI:string = 'http://localhost:8080';
+  CALL: string =  'ticket/subscribe';
+  URI:string = api_address;
 
   constructor(@Inject(LongPoll) private longPoll: LongPoll){
     longPoll.setUri(this.URI);
