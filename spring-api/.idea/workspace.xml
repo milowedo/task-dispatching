@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="981687e6-c5b7-4943-890a-abac6d96231d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/singleTicket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/singleTicket.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            <state relative-caret-position="450">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -131,9 +131,8 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="98" />
-    <option name="y" value="-21" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -228,7 +227,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550508681864" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550521841576" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/jaxrs-ri-JERSEY-LIB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -338,15 +337,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550346542503</updated>
-      <workItem from="1550346543909" duration="22996000" />
+      <workItem from="1550346543909" duration="24288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22996000" />
+    <option name="totallyTimeSpent" value="24288000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="816" y="269" width="974" height="1047" extended-state="1" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -356,7 +355,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Persistence" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34901533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34901533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.32932165" />
       <window_info anchor="bottom" id="Spring" />
@@ -370,7 +369,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.40700218" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40700218" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -555,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        <state relative-caret-position="450">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
         </state>
       </provider>
     </entry>
