@@ -1,13 +1,13 @@
 import {Component, Input} from '@angular/core';
-import {TicketService} from '../services/ticket.service';
-import {Ticket} from '../entities/ticket.model';
+import {TicketService} from '../../../services/ticket.service';
+import {Ticket} from '../../../entities/ticket.model';
 
 @Component({
   selector: 'app-ticket',
-  templateUrl: './singleTicket.component.html',
+  templateUrl: './ticket-list-element.component.html',
   providers : [TicketService],
 })
-export class SingleTicketComponent {
+export class TicketListElementComponent {
 
   protected isSelected: boolean = false;
   @Input() ticket : Ticket;
