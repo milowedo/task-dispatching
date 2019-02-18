@@ -10,7 +10,7 @@ SET SQL_SAFE_UPDATES = 0;
 
 update ticket_system.ticket set ticket_id =
 (select actual_id from ticket_system.indices where id = ticket_id)
-where ticket_id is not null 
+where ticket_id is not null
 
 
 select * from ticket_system.ticket

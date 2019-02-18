@@ -44,7 +44,7 @@ public class EmployeeRestController {
     }
 
     //GET EMPLOYEE BY ID
-    @GetMapping("/employee/{employeeId}")
+    @GetMapping("/{employeeId}")
     public ResponseEntity<Employee> getEmployee(@PathVariable int employeeId){
         Employee returnedEmployee = employeeService.getEmployee(employeeId);
 //        session.invalidate();

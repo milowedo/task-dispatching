@@ -39,16 +39,9 @@ public class EmployeeDaoImpl implements EmployeeDaoInterface {
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		Query<Employee> employeeQuery = currentSession.createQuery(
-				"from Employee where employee_id = :employeeID ", Employee.class);
+				"from Employee where employee_id=:employeeID", Employee.class);
 		employeeQuery.setParameter("employeeID", theId);
 		Employee emp = employeeQuery.getSingleResult();
-
-		String teamName = (String) currentSession.createQuery(
-				"select name from Team t where team_id = :teamID ")
-				.setParameter("teamID", emp.getTeam_id())
-				.uniqueResult();
-		emp.setTeamName(teamName);
-
 		return emp;
 	}
 

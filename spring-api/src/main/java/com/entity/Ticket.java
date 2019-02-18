@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "ticket")
@@ -23,4 +24,11 @@ public class Ticket extends Resolvable {
 
     @Column(name="status")
     private String ticketStatus;
+
+    @Column(name = "short_desc")
+    private String descriptionGist;
+
+    @Column(name = "time_created")
+    @Temporal(TemporalType.DATE)
+    private Date timeCreated;
 }

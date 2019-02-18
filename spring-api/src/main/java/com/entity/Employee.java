@@ -24,10 +24,7 @@ public class Employee extends Resolvable {
     @Column(name="name")
     private String name;
 
-    @Column(name="team_id")
-    private int team_id;
-
-    @Transient
+    @Column(name = "department")
     private String teamName;
 
 //	@Column(name="email")
