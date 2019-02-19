@@ -10,7 +10,6 @@ import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscr
 import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {AppRoutingModule} from './app.routing';
-import { TicketListElementComponent } from './ticket/ticket-list/ticket-list-element/ticket-list-element.component';
 import { ChangeTicketComponent } from './ticket/ticket-sub/change-ticket/change-ticket.component';
 import { SubscribeTicketComponent } from './ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
@@ -18,6 +17,7 @@ import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
 import { TicketEditComponent } from './ticket/ticket-edit/ticket-edit.component';
 import { TicketListElementComponent } from './ticket/ticket-list/ticket-list-element/ticket-list-element.component';
 import { FullTicketComponent } from './ticket/full-ticket/full-ticket.component';
+import { TicketTabComponent } from './ticket/ticket-tab.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { FullTicketComponent } from './ticket/full-ticket/full-ticket.component'
     TicketEditComponent,
     TicketListElementComponent,
     FullTicketComponent,
+    TicketTabComponent,
   ],
   imports: [
     BrowserModule,
