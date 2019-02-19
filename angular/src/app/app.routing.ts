@@ -13,10 +13,13 @@ const appRoutes = [
   {path: 'tickets', component: TicketTabComponent,
     children: [
       {path:'', component: TicketListComponent},
-      {path:'add', component: TicketEditComponent},
       {path:':id', component: FullTicketComponent},
       {path:':id/edit', component: TicketEditComponent},
     ]},
+  {path: 'ticket', component: FullTicketComponent ,
+    children: [
+      {path:'new', component: TicketEditComponent}
+      ]},
   {path: '', redirectTo: '/tickets', pathMatch: 'full'}
 ];
 
