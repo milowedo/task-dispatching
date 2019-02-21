@@ -1,14 +1,14 @@
 import {Ticket} from '../entities/ticket.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {EventEmitter, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {api_address} from '../globals/globals';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class TicketService {
 
   private tickets: Ticket[] = [];
-  ticketsChanged = new EventEmitter<Ticket[]>();
-  ticketClicked = new EventEmitter<Ticket>();
+  ticketsChanged = new Subject<Ticket[]>();
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -26,7 +26,7 @@ export class TicketService {
 
   public setTickets(newSetOfTickets: Ticket[]){
     this.tickets = newSetOfTickets;
-    this.ticketsChanged.emit(this.tickets.slice());
+    this.ticketsChanged.next(this.tickets.slice());
   }
 
   public getTickets(){

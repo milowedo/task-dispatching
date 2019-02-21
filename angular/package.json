@@ -23,7 +23,9 @@
     "bootstrap": "^3.4.0",
     "core-js": "^2.5.4",
     "ng2-cookies": "^1.0.12",
+    "rjx": "^1.6.1",
     "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
