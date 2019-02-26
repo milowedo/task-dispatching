@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="981687e6-c5b7-4943-890a-abac6d96231d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/services/ticket.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-list/ticket-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-tab.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/src/app/ticket/ticket-tab.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-scripts/copmapny_script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql-scripts/copmapny_script.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,11 +54,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="350">
               <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql-scripts/copmapny_script.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -116,8 +122,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/restController/EmployeeRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Employee.java" />
-        <option value="$PROJECT_DIR$/sql-scripts/copmapny_script.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Ticket.java" />
+        <option value="$PROJECT_DIR$/sql-scripts/copmapny_script.sql" />
       </list>
     </option>
   </component>
@@ -135,9 +141,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="954" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -146,7 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,13 +231,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550521841576" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551223612488" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/jaxrs-ri-JERSEY-LIB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -342,18 +348,20 @@
       <option name="presentableId" value="Default" />
       <updated>1550346542503</updated>
       <workItem from="1550346543909" duration="24288000" />
-      <workItem from="1550752415352" duration="593000" />
+      <workItem from="1550752415352" duration="1189000" />
+      <workItem from="1550869390942" duration="596000" />
+      <workItem from="1550933318167" duration="3773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24881000" />
+    <option name="totallyTimeSpent" value="29846000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="954" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35667396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38143176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -365,7 +373,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40700218" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.40700218" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -501,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql-scripts/copmapny_script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="189" selection-start-line="21" selection-start-column="189" selection-end-line="21" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EmployeeDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -545,8 +546,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="350">
           <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql-scripts/copmapny_script.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
