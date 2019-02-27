@@ -1,58 +1,56 @@
 package com.dao;
 
-import com.entity.Ticket;
+import com.entity.Issue;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository
-public class TicketDaoImpl implements TicketDaoInterface {
+public class IssueDaoImpl implements IssueDaoFactory {
 
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public TicketDaoImpl(SessionFactory sessionFactory) {
+    public IssueDaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
-    public int addTicket(Ticket ticket) {
+    public int addIssue(Issue issue) {
         Session currentSession = sessionFactory.getCurrentSession();
-
-        currentSession.save(ticket);
-        return ticket.getTicketID();
+        currentSession.saveOrUpdate(issue);
+        return issue.getId();
     }
 
     @Override
-    public Ticket getTicket(int ticketID) {
+    public Issue getIssue(int id) {
         Session currentSession = sessionFactory.getCurrentSession();
-        Query<Ticket> ticketQuery = currentSession
-                .createQuery("from Ticket where ticket_id = :ticketId ", Ticket.class)
-                .setParameter("ticketId", ticketID);
-        return ticketQuery.uniqueResult();
+        Query<Issue> query = currentSession
+                .createQuery("from Issue where issue_id = :issueID ", Issue.class)
+                .setParameter("issueID", id);
+        return query.uniqueResult();
     }
 
     @Override
-    public List<Ticket> getAllTickets() {
+    public List<Issue> getAllIssues() {
         Session currentSession = sessionFactory.getCurrentSession();
 
-        Query<Ticket> theQuery = currentSession
+        Query<Issue> theQuery = currentSession
                 .createQuery(
-                "from Ticket", Ticket.class);
+                "from Issue", Issue.class);
         return theQuery.getResultList();
     }
 
     @Override
-    public void deleteTicket(int ticketID) {
+    public void deleteIssue(int id) {
         Session currentSession = sessionFactory.getCurrentSession();
 
         Query query = currentSession
-                .createQuery("delete from Ticket where ticket_id = :ticketId", Ticket.class)
-                .setParameter("ticketId", ticketID);
+                .createQuery("delete from Issue where issue_id = :issueID", Issue.class)
+                .setParameter("issueID", id);
         query.executeUpdate();
     }
 }

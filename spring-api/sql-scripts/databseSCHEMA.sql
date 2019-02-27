@@ -41,7 +41,7 @@ create table if not exists `issue` (
                                      `owner` varchar(50),
                                      `project_name` varchar(50),
                                      primary key (`issue_id`),
-                                     check ( issue_key REGEXP '[a-zA-Z]{1,5}-[0-9]{1,7}')
+                                     check ( issue_key REGEXP '[a-zA-Z]{1,5}-[0-9]{1,6}')
 )
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
