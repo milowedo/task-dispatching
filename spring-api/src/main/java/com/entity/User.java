@@ -9,20 +9,26 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
-@Entity(name = "Employee")
-@Table(name="employee")
+@Entity(name = "User")
+@Table(name="user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee extends Resolvable {
+public class User extends Resolvable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="employee_id")
-	private int employee_id;
+	@Column(name="user_id")
+	private int id;
 
     @Column(name="name")
     private String name;
+
+    @Column(name="surname")
+    private String surname;
+
+    @Column(name="user_key")
+    private String key;
 
     @Column(name = "department")
     private String teamName;
