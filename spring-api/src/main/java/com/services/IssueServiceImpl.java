@@ -10,18 +10,18 @@ import java.util.List;
 
 
 @Service
-public class TicketServiceImpl extends ServicePoll implements TicketServiceInterface{
+public class IssueServiceImpl extends ServicePoll implements IssueServiceInterface {
 
     private final IssueDaoFactory issueDaoFactory;
 
     @Autowired
-    public TicketServiceImpl(IssueDaoFactory issueDaoFactory) {
+    public IssueServiceImpl(IssueDaoFactory issueDaoFactory) {
         this.issueDaoFactory = issueDaoFactory;
     }
 
     @Override
     @Transactional
-    public int addTicket(Issue issue) {
+    public int addIssue(Issue issue) {
         int id = issueDaoFactory.addIssue(issue);
         this.notifyOfChange(issue);
         return id;
@@ -29,21 +29,20 @@ public class TicketServiceImpl extends ServicePoll implements TicketServiceInter
 
     @Override
     @Transactional
-    public Issue getTicket(int ticketID) {
-        return issueDaoFactory.getIssue(ticketID);
+    public Issue getIssue(int id) {
+        return issueDaoFactory.getIssue(id);
     }
 
     @Override
     @Transactional
-    public void deleteTicket(int ticketID){
-        issueDaoFactory.deleteIssue(ticketID);
-    }
-
-    @Override
-    @Transactional
-    public List<Issue> getAllTickets() {
+    public List<Issue> getAllIssues() {
         return issueDaoFactory.getAllIssues();
     }
 
-
+    @Override
+    @Transactional
+    public void deleteIssue(int id){
+        issueDaoFactory.deleteIssue(id);
+    }
+    
 }
