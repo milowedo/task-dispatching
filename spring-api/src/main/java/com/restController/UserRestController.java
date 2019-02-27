@@ -1,10 +1,10 @@
 package com.restController;
 
 import com.LongPolling.State.RequestPromise;
-import com.entity.Employee;
+import com.entity.User;
 import com.LongPolling.Overseer;
 import com.exceptionHandlingStuff.EmployeeNotFoundException;
-import com.services.EmployeeServiceInterface;
+import com.services.UserServiceInterface;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,11 +16,11 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/employee")
 public class EmployeeRestController {
 
-    private final EmployeeServiceInterface employeeService;
+    private final UserServiceInterface employeeService;
     private final Overseer overseer;
 
     @Autowired
-    public EmployeeRestController(EmployeeServiceInterface employeeService, Overseer overseer) {
+    public EmployeeRestController(UserServiceInterface employeeService, Overseer overseer) {
         this.employeeService = employeeService;
         this.overseer = overseer;
     }
@@ -30,7 +30,7 @@ public class EmployeeRestController {
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
         return overseer.subscribe(
-                Employee.class.getName(),
+                User.class.getName(),
                 session,
                 employeeService);
     }
@@ -38,20 +38,20 @@ public class EmployeeRestController {
     @NotNull
     @GetMapping("/trigger/{employeeId}")
     public ResponseEntity<?> updateEmployee(@PathVariable int employeeId){
-        Employee temp = employeeService.getEmployee(employeeId);
-        employeeService.saveEmployee(temp);
+        User temp = employeeService.getUser(employeeId);
+        employeeService.saveUser(temp);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     //GET EMPLOYEE BY ID
     @GetMapping("/{employeeId}")
-    public ResponseEntity<Employee> getEmployee(@PathVariable int employeeId){
-        Employee returnedEmployee = employeeService.getEmployee(employeeId);
+    public ResponseEntity<User> getEmployee(@PathVariable int employeeId){
+        User returnedUser = employeeService.getUser(employeeId);
 //        session.invalidate();
-        if(returnedEmployee !=null){
-            return ResponseEntity.ok().body(returnedEmployee);
+        if(returnedUser !=null){
+            return ResponseEntity.ok().body(returnedUser);
         }
-        else throw new EmployeeNotFoundException("Employee not found: " + employeeId);
+        else throw new EmployeeNotFoundException("User not found: " + employeeId);
     }
 
 

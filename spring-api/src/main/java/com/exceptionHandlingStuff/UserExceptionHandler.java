@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class EmployeeExceptionHandler {
+public class UserExceptionHandler {
 
     @NotNull
     @ExceptionHandler
-    public ResponseEntity<EmployeeErrorResponse> handleException(@NotNull EmployeeNotFoundException exception){
+    public ResponseEntity<UserErrorResponse> handleException(@NotNull UserNotFoundException exception){
 
-        EmployeeErrorResponse errorResponse = new EmployeeErrorResponse();
+        UserErrorResponse errorResponse = new UserErrorResponse();
 
         errorResponse.setMessage(exception.getMessage());
         errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
@@ -24,9 +24,9 @@ public class EmployeeExceptionHandler {
 
     @NotNull
     @ExceptionHandler
-    public ResponseEntity<EmployeeErrorResponse> handleException(@NotNull Exception exception){
+    public ResponseEntity<UserErrorResponse> handleException(@NotNull Exception exception){
 
-        EmployeeErrorResponse errorResponse = new EmployeeErrorResponse();
+        UserErrorResponse errorResponse = new UserErrorResponse();
 
         errorResponse.setMessage(exception.getMessage());
         errorResponse.setStatus(HttpStatus.BAD_REQUEST.value());

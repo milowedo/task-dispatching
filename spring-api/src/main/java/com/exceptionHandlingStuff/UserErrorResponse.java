@@ -3,7 +3,7 @@ package com.exceptionHandlingStuff;
 import lombok.Data;
 
 @Data
-public class EmployeeErrorResponse {
+class UserErrorResponse {
 
     private int status;
     private String message;
