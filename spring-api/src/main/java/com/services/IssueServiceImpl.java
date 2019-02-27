@@ -44,5 +44,5 @@ public class IssueServiceImpl extends ServicePoll implements IssueServiceInterfa
     public void deleteIssue(int id){
         issueDaoFactory.deleteIssue(id);
     }
-    
+
 }
