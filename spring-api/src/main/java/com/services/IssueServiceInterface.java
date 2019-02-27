@@ -1,12 +1,13 @@
 package com.services;
 
 import com.LongPolling.ServiceInterface;
-import com.entity.Ticket;
+import com.entity.Issue;
+
 import java.util.List;
 
 public interface TicketServiceInterface extends ServiceInterface {
-    int addTicket(Ticket ticket);
-    Ticket getTicket(int ticketID);
-    List<Ticket> getAllTickets();
+    int addTicket(Issue issue);
+    Issue getTicket(int ticketID);
+    List<Issue> getAllTickets();
     void deleteTicket(int ticketID);
 }
