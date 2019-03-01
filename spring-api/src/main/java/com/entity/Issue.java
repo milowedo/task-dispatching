@@ -30,7 +30,7 @@ public class Issue extends Resolvable {
     private String status;
 
     @Column(name = "summary")
-    private Date summary;
+    private String summary;
 
     @Column(name = "owner")
     private String owner;
