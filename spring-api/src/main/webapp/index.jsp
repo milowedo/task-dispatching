@@ -5,13 +5,13 @@
 <br><br>
 <hr>
 
-<a href="${pageContext.request.contextPath}/employee/subscribe">subscribe to new employees</a>
-<a href="${pageContext.request.contextPath}/employee/trigger/2">change data for employee</a>
+<a href="${pageContext.request.contextPath}/user/subscribe">subscribe to new employees</a>
+<a href="${pageContext.request.contextPath}/user/trigger/1">change data for employee</a>
 <hr>
 <br><br>
 <hr>
-<a href="${pageContext.request.contextPath}/ticket/subscribe">subscribe to new tickets</a>
-<a href="${pageContext.request.contextPath}/ticket/trigger/2">change data for ticket</a>
+<a href="${pageContext.request.contextPath}/issue/subscribe">subscribe to new tickets</a>
+<a href="${pageContext.request.contextPath}/issue/trigger/1">change data for issue</a>
 
 <hr>
 
