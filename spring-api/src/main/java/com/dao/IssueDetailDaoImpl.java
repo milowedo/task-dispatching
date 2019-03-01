@@ -36,7 +36,7 @@ public class IssueDetailDaoImpl implements IssueDetailDaoInterface {
     @Override
     public void deleteDetail(int issueID) {
         Session session = this.sessionFactory.getCurrentSession();
-        Query<IssueDetail> query = session.createQuery("delete from issue_detail where issue_id=:ID", IssueDetail.class)
+        Query query = session.createQuery("delete from issue_detail where issue_id=:ID")
                 .setParameter("ID", issueID);
         query.executeUpdate();
     }

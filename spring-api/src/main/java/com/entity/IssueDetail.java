@@ -16,18 +16,16 @@ public class IssueDetail {
     @Column
     private String description;
 
-    @Column
+    @Column(name = "priority")
     private int priority;
 
     @Column
     private String assigned;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column
-    private Date created;
+    private Date created = new Date();
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column
-    private Date updated;
-
+    private Date updated =  new Date();
 }

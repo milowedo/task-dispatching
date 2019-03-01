@@ -36,7 +36,7 @@ public class IssueDetailController {
 
 
     @DeleteMapping("delete/{issueID}")
-    public ResponseEntity<?> deleteIssue(@PathVariable("issueID") int issueID){
+    public ResponseEntity<?> deleteDetail(@PathVariable("issueID") int issueID){
         issueDetailService.deleteDetail(issueID);
         return ResponseEntity.ok().body("Issue with id of "+ issueID +" has been deleted");
     }
