@@ -1,26 +1,24 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {EmployeeComponent} from './employee/employee.component';
-import {TicketListComponent} from './ticket/ticket-list/ticket-list.component';
-import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
-import {TicketEditComponent} from './ticket/ticket-edit/ticket-edit.component';
-import {FullTicketComponent} from './ticket/full-ticket/full-ticket.component';
-import {TicketTabComponent} from './ticket/ticket-tab.component';
+import {IssueListComponent} from './issue/issue-list/issue-list.component';
+import {IssueSubComponent} from './issue/issue-subscription/issue-sub.component';
+import {IssueEditComponent} from './issue/issue-edit/issue-edit.component';
+import {FullIssueComponent} from './issue/full-issue/full-issue.component';
+import {IssueTabComponent} from './issue/issue-tab.component';
 
 const appRoutes = [
-  {path: 'employeeSub', component: EmployeeComponent},
-  {path: 'ticketSub', component: TicketSubComponent},
-  {path: 'tickets', component: TicketTabComponent,
+  {path: 'issueSub', component: IssueSubComponent},
+  {path: 'issues', component: IssueTabComponent,
     children: [
-      {path:'', component: TicketListComponent},
-      {path:':id', component: FullTicketComponent},
-      {path:':id/edit', component: TicketEditComponent},
+      {path:'', component: IssueListComponent},
+      {path:':id', component: FullIssueComponent},
+      {path:':id/edit', component: IssueEditComponent},
     ]},
-  {path: 'ticket', component: FullTicketComponent ,
+  {path: 'issue', component: FullIssueComponent ,
     children: [
-      {path:'new', component: TicketEditComponent}
+      {path:'new', component: IssueEditComponent}
       ]},
-  {path: '', redirectTo: '/tickets', pathMatch: 'full'}
+  {path: '', redirectTo: '/issues', pathMatch: 'full'}
 ];
 
 @NgModule({

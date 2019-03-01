@@ -10,14 +10,14 @@ import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscr
 import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {AppRoutingModule} from './app.routing';
-import { ChangeTicketComponent } from './ticket/ticket-sub/change-ticket/change-ticket.component';
-import { SubscribeTicketComponent } from './ticket/ticket-sub/subscribe-ticket/subscribe-ticket.component';
-import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
-import {TicketSubComponent} from './ticket/ticket-sub/ticket-sub.component';
-import { TicketEditComponent } from './ticket/ticket-edit/ticket-edit.component';
-import { TicketListElementComponent } from './ticket/ticket-list/ticket-list-element/ticket-list-element.component';
-import { FullTicketComponent } from './ticket/full-ticket/full-ticket.component';
-import { TicketTabComponent } from './ticket/ticket-tab.component';
+import { ChangeIssueComponent } from './issue/issue-subscription/change-issue/change-issue.component';
+import { SubscribeIssueComponent } from './issue/issue-subscription/subscribe-issue/subscribe-issue.component';
+import { IssueListComponent } from './issue/issue-list/issue-list.component';
+import {IssueSubComponent} from './issue/issue-subscription/issue-sub.component';
+import { IssueEditComponent } from './issue/issue-edit/issue-edit.component';
+import { IssueListElementComponent } from './issue/issue-list/issue-list-element/issue-list-element.component';
+import { FullIssueComponent } from './issue/full-issue/full-issue.component';
+import { IssueTabComponent } from './issue/issue-tab.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +27,15 @@ import { TicketTabComponent } from './ticket/ticket-tab.component';
     HeaderComponent,
     DropdownDirective,
     EmployeeComponent,
-    TicketListElementComponent,
-    ChangeTicketComponent,
-    SubscribeTicketComponent,
-    TicketListComponent,
-    TicketSubComponent,
-    TicketEditComponent,
-    TicketListElementComponent,
-    FullTicketComponent,
-    TicketTabComponent,
+    IssueListElementComponent,
+    ChangeIssueComponent,
+    SubscribeIssueComponent,
+    IssueListComponent,
+    IssueSubComponent,
+    IssueEditComponent,
+    IssueListElementComponent,
+    FullIssueComponent,
+    IssueTabComponent,
   ],
   imports: [
     BrowserModule,

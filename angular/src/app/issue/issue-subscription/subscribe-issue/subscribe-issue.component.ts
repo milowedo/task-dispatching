@@ -1,17 +1,17 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {LongPoll} from '../../../globals/LongPoll';
-import {Ticket} from '../../../entities/ticket.model';
+import {Issue} from '../../../entities/issue.model';
 import {api_address} from '../../../globals/globals';
 
 @Component({
-  selector: 'app-subscribe-ticket',
-  templateUrl: './subscribe-ticket.component.html',
+  selector: 'app-subscribe-issue',
+  templateUrl: './subscribe-issue.component.html',
   providers: [LongPoll],
 })
-export class SubscribeTicketComponent {
-  received:Ticket  = null;
+export class SubscribeIssueComponent {
+  received:Issue  = null;
   subscribing: boolean = false;
-  CALL: string =  'ticket/subscribe';
+  CALL: string =  'issue/subscribe';
   URI:string = api_address;
 
   constructor(@Inject(LongPoll) private longPoll: LongPoll){

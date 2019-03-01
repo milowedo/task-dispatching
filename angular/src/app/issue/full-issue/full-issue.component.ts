@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
-  selector: 'app-full-ticket',
-  templateUrl: './full-ticket.component.html',
+  selector: 'app-full-issue',
+  templateUrl: './full-issue.component.html',
 })
-export class FullTicketComponent implements OnInit {
+export class FullIssueComponent implements OnInit {
   id : number;
   constructor( private route: ActivatedRoute) { }
 
