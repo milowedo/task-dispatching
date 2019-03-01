@@ -49,7 +49,7 @@ create table if not exists `issue` (
 insert into issue values (1, 'KIS-36', 'To do', 'client api does not return proper reservations', 'Mark Twain', 'medic-center');
 
 create table if not exists `issue_detail` (
-                                            `issue_id` int(11) not null,
+                                            `issue_id` int(11) not null primary key,
                                             `description` text,
                                             `priority` TINYINT not null,
                                             `assigned` CHAR(6),
