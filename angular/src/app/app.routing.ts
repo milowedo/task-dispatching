@@ -11,13 +11,13 @@ const appRoutes = [
   {path: 'issues', component: IssueTabComponent,
     children: [
       {path:'', component: IssueListComponent},
+    ]},
+  {path: 'issue', component: IssueTabComponent ,
+    children: [
+      {path:'new', component: IssueEditComponent},
       {path:':id', component: FullIssueComponent},
       {path:':id/edit', component: IssueEditComponent},
     ]},
-  {path: 'issue', component: FullIssueComponent ,
-    children: [
-      {path:'new', component: IssueEditComponent}
-      ]},
   {path: '', redirectTo: '/issues', pathMatch: 'full'}
 ];
 
