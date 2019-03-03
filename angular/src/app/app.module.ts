@@ -6,9 +6,6 @@ import {DEFAULT_TIMEOUT, HttpRequestInterceptor} from './request-interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import {DropdownDirective} from './directives/dropdown.directive';
-import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscribe-employee.component';
-import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
-import { EmployeeComponent } from './employee/employee.component';
 import {AppRoutingModule} from './app.routing';
 import { ChangeIssueComponent } from './issue/issue-subscription/change-issue/change-issue.component';
 import { SubscribeIssueComponent } from './issue/issue-subscription/subscribe-issue/subscribe-issue.component';
@@ -18,15 +15,16 @@ import { IssueEditComponent } from './issue/issue-edit/issue-edit.component';
 import { IssueListElementComponent } from './issue/issue-list/issue-list-element/issue-list-element.component';
 import { FullIssueComponent } from './issue/full-issue/full-issue.component';
 import { IssueTabComponent } from './issue/issue-tab.component';
+import {IssueService} from './services/issue.service';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubscribeEmployeeComponent,
-    ChangeEmployeeComponent,
     HeaderComponent,
     DropdownDirective,
-    EmployeeComponent,
     IssueListElementComponent,
     ChangeIssueComponent,
     SubscribeIssueComponent,
@@ -38,9 +36,12 @@ import { IssueTabComponent } from './issue/issue-tab.component';
     IssueTabComponent,
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
   ],
   providers: [
     [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }],
@@ -48,7 +49,7 @@ import { IssueTabComponent } from './issue/issue-tab.component';
     {provide: HTTP_INTERCEPTORS,
       useClass: HttpResponseInterceptor,
       multi: true},
-
+    IssueService,
   ],
   bootstrap: [AppComponent]
 })
