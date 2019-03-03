@@ -1,3 +1,93 @@
-<p>
-  issue-edit works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Hi {{loggedUserName}}, you are now adding an issue</h1>
+    <hr>
+    <br>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="issueForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="pull-left col-xs-2">
+          <div class="form-group">
+            <label for="issue_key">Key</label>
+            <input type="text"
+                   maxlength="10"
+                   id="issue_key"
+                   formControlName="key"
+                   class="form-control">
+            <div *ngIf="issueForm.get('key').invalid && issueForm.get('key').touched" class="invalid-feedback">
+              Please insert key.
+            </div>
+            <div *ngIf="issueForm.get('key').valid && issueForm.get('key').touched" class="valid-feedback">
+              Looks good.
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-2">
+            <div class="form-group">
+              <label for="priority">Priority</label>
+              <input type="text"
+                     id="priority"
+                     formControlName="priority"
+                     class="form-control">
+            </div>
+        </div>
+        <div class="pull-right col-xs-3">
+          <div class="form-group e">
+            <label for="project_name" class="control-label pull-right">Project name</label>
+            <input type="text"
+                   id="project_name"
+                   formControlName="project"
+                   class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Full issue description</label>
+            <textarea type="text"
+                      maxlength="500"
+                   rows="4"
+                   id="description"
+                   formControlName="description"
+                      class="form-control input-lg"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="summary">Problem summary</label>
+            <textarea type="text"
+                      maxlength="100"
+                      rows="1"
+                       id="summary"
+                       formControlName="summary"
+                       class="form-control"
+                      ></textarea>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit"
+                  [disabled]="!issueForm.valid"
+                  class="btn btn-success">Save</button>
+          <button (click)="leaveEdit()" type="button" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>

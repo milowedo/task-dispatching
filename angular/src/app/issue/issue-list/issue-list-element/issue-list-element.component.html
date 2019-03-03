@@ -1,26 +1,20 @@
-<a
-  style="cursor: pointer"
+<div
+    style="cursor: pointer"
+    class="list-group-item list-group-item-action"
+    (click)="issueSelected()">
 
-  class="list-group-item clearfix"
-  (click)="issueSelected()">
-
-  <div class="pull-left col-sm-8">
-
-      <h4 class="list-group-item-heading" *ngIf="true">{{(issue.issue_key)}}</h4>
+    <div>
+      <div class="d-flex w-100 justify-content-between">
+        <h4 class="list-group-item-heading" *ngIf="true">{{(issue.issue_key)}}</h4>
+        <button style="margin-bottom: 0"
+                class="btn btn-primary pull-right"
+                (click)="detailsSelected()">Details</button>
+      </div>
       <h5 class="list-group-item-text">STATUS: {{issue.status}}</h5>
-
-      <p *ngIf="isSelected" ><br>description:</p>
+      <p *ngIf="isSelected" ><br>issue summary:</p>
       <p *ngIf="isSelected" class="list-group-item">{{issue.summary}}</p>
-
-  </div>
-
-  <div class="pull-right col-sm-4">
-    <div class="pull-right">
-      <p *ngIf="isSelected" ><br>{{dateInString}}</p>
-      <button style="margin-bottom: 0"
-              class="btn btn-info pull-right"
-              (click)="detailsSelected()">Details</button>
     </div>
-  </div>
-</a>
+
+
+</div>
 
