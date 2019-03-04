@@ -2,29 +2,33 @@
 <div class="container">
   <div class="row">
 
-    <div class="col">
-      To do
+    <div class="col-lg-3 col-md-6">
+      <p class="text-center font-weight-bolder">To do</p>
+      <hr>
       <issue-element *ngFor="let element of filter(issues, 'to do'); let i= index;"
                      [issue]="element" [id]="i">
       </issue-element>
     </div>
 
-    <div class="col">
-      In progess
+    <div class="col-lg-3 col-md-6">
+      <p class="text-center font-weight-bolder">In progess</p>
+      <hr>
       <issue-element *ngFor="let element of filter(issues, 'in progress'); let i= index;"
                      [issue]="element" [id]="i">
       </issue-element>
     </div>
 
-    <div class="col">
-      Code Review
+    <div class="col-lg-3 col-md-6">
+      <p class="text-center font-weight-bolder">Code Review</p>
+      <hr>
       <issue-element *ngFor="let element of filter(issues, 'code review'); let i= index;"
                      [issue]="element" [id]="i">
       </issue-element>
     </div>
 
-    <div class="col">
-      Done
+    <div class="col-lg-3 col-md-6">
+      <p class="text-center font-weight-bolder">Done</p>
+      <hr>
       <issue-element *ngFor="let element of filter(issues, 'done'); let i= index;"
                      [issue]="element" [id]="i">
       </issue-element>
