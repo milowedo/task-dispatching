@@ -1,8 +1,33 @@
 <hr>
-<div class="row">
-  <div class="col-12">
-    <issue-element *ngFor="let element of issues; let i= index;"
-                   [issue]="element" [id]="i">
-    </issue-element>
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+      To do
+      <issue-element *ngFor="let element of filter(issues, 'to do'); let i= index;"
+                     [issue]="element" [id]="i">
+      </issue-element>
+    </div>
+
+    <div class="col">
+      In progess
+      <issue-element *ngFor="let element of filter(issues, 'in progress'); let i= index;"
+                     [issue]="element" [id]="i">
+      </issue-element>
+    </div>
+
+    <div class="col">
+      Code Review
+      <issue-element *ngFor="let element of filter(issues, 'code review'); let i= index;"
+                     [issue]="element" [id]="i">
+      </issue-element>
+    </div>
+
+    <div class="col">
+      Done
+      <issue-element *ngFor="let element of filter(issues, 'done'); let i= index;"
+                     [issue]="element" [id]="i">
+      </issue-element>
+    </div>
   </div>
 </div>
