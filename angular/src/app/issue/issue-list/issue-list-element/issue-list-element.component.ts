@@ -6,14 +6,14 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'issue-element',
   templateUrl: './issue-list-element.component.html',
-  providers : [IssueService],
+
 })
 export class IssueListElementComponent {
 
   protected isSelected: boolean = false;
   @Input() issue : Issue;
   protected id: number;
-  protected dateInString : String;
+  //protected dateInString : String;
 
   constructor(private issueService: IssueService,
               private route: ActivatedRoute,
@@ -26,6 +26,6 @@ export class IssueListElementComponent {
   }
 
   detailsSelected() {
-    this.router.navigate([this.issue.id], {relativeTo: this.route})
+    this.router.navigate(['../issue/', this.issue.id], )
   }
 }
