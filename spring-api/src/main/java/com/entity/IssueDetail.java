@@ -16,9 +16,6 @@ public class IssueDetail {
     @Column
     private String description;
 
-    @Column(name = "priority")
-    private int priority;
-
     @Column
     private String assigned;
 

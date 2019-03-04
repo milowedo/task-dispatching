@@ -1,22 +1,46 @@
-<div
-    style="cursor: pointer"
+<div style="cursor: pointer; padding-right: 10px"
     class="list-group-item list-group-item-action"
     (click)="issueSelected()">
 
-    <div>
-      <div class="d-flex w-100 justify-content-between">
-        <p class="list-group-item-heading" *ngIf="true">{{(issue.issue_key)}}</p>
-        <button style="margin-bottom:0; max-height: 40px"
-                class="btn btn-primary pull-right"
-                (click)="detailsSelected()">Details</button>
-      </div>
-      <div *ngIf="isSelected">
-        <hr>
-        <h6><br>issue summary:</h6>
-        <p>{{issue.summary}}</p>
+  <div class="row">
+    <div class="d-flex align-items-center">
+      <div class="border-right">
+        <div class="col">
+          <span [ngClass]="{
+                'badge-danger': issue.priority >=7,
+                'badge-warning': issue.priority >=4,
+                'badge-success': issue.priority >=1
+                }"
+                class="badge badge-pill"
+                style="max-height: 20px">
+            {{issue.priority}}
+          </span>
+        </div>
       </div>
     </div>
 
+    <div class="d-flex  justify-content-between">
+
+      <div class="d-flex  align-items-center">
+        <div class="col" style="">
+        <span class="list-group-item-heading ">{{(issue.issue_key)}}</span>
+        </div>
+      </div>
+
+        <div class="col" style="padding-left: 0; padding-right: 0">
+          <button style="margin-bottom:0; max-height: 35px"
+                  class="btn btn-primary float-right"
+                  (click)="detailsSelected()">Details</button>
+        </div>
+
+    </div>
+  </div>
+
+  <hr *ngIf="isSelected">
+  <div *ngIf="isSelected" class="row">
+    <h6>issue summary:</h6>
+    <p>{{issue.summary}}</p>
+  </div>
 
 </div>
 

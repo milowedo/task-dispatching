@@ -29,6 +29,9 @@ public class Issue extends Resolvable {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "priority")
+    private int priority;
+
     @Column(name = "summary")
     private String summary;
 

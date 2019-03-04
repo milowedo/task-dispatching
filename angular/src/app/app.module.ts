@@ -16,7 +16,7 @@ import { IssueListElementComponent } from './issue/issue-list/issue-list-element
 import { FullIssueComponent } from './issue/full-issue/full-issue.component';
 import { IssueTabComponent } from './issue/issue-tab.component';
 import {IssueService} from './services/issue.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
 
@@ -41,6 +41,7 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [

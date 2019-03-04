@@ -2,7 +2,6 @@
 <div class="row" *ngIf="details != null">
 
   Description: {{details.description}}<br><br>
-  Priority: {{details.priority}}<br><br>
   Assigned to: {{details.assigned}}<br><br>
   Time created: {{details.created}}<br><br>
   Last updated {{details.updated}}<br><br>
@@ -11,6 +10,7 @@
 <div class="row" *ngIf="issue != null">
   issue_key {{issue.issue_key}}<br><br>
   status {{issue.status}}<br><br>
+  Priority: {{issue.priority}}<br><br>
   owner {{issue.owner}}<br><br>
   project {{issue.project}}<br><br>
 </div>

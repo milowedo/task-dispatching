@@ -39,30 +39,30 @@ create table if not exists `issue` (
                                      `status` ENUM('to do', 'in progress', 'code review', 'done') not null,
                                      `summary` varchar(100),
                                      `owner` varchar(50),
+                                     `priority` TINYINT not null,
                                      `project_name` varchar(50),
                                      primary key (`issue_id`),
-                                     check ( issue_key REGEXP '[a-zA-Z]{1,5}-[0-9]{1,6}')
+                                     check ( issue_key REGEXP '[a-zA-Z]{1,3}-[0-9]{1,2}'),
+                                     constraint priority_check check ( priority between 1 and 9)
 )
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
 
-insert into issue values (1, 'KIS-36', 'To do', 'client api does not return proper reservations', 'Mark Twain', 'medic-center');
+insert into issue values (1, 'KIS-36', 'To do', 'client api does not return proper reservations', 'Mark Twain', 4, 'medic-center');
 
 create table if not exists `issue_detail` (
                                             `issue_id` int(11) not null primary key,
                                             `description` text,
-                                            `priority` TINYINT not null,
                                             `assigned` CHAR(6),
                                             `created` timestamp default current_timestamp,
                                             `updated` timestamp default current_timestamp,
-                                            foreign key(issue_id) references issue (issue_id),
-                                            check ( priority between 1 and 9)
+                                            foreign key(issue_id) references issue (issue_id)
 )
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8mb4;
 
-insert into issue_detail (issue_id, description, priority, assigned)
-values (1,'somebody once told me there was a problem',5,'JOHLOC');
+insert into issue_detail (issue_id, description,  assigned)
+values (1,'somebody once told me there was a problem','JOHLOC');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
