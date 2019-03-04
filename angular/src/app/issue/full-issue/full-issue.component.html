@@ -1,16 +1,83 @@
+<div class="container">
+  <div class="py-5 text-center">
+    <h1>
+      <span [ngClass]="{
+                'badge-danger': issue.priority >=7,
+                'badge-warning': issue.priority >=4,
+                'badge-success': issue.priority >=1
+                }"
+                  class="badge align-bottom rounded-bottom">
+            {{issue.priority}}
+          </span>
+      ISSUE {{issue.issue_key}}</h1>
+    <p class="lead">{{issue.summary}}</p>
+    <hr>
+  </div>
 
-<div class="row" *ngIf="details != null">
+  <div class="row">
+    <div class="col-md-4 order-md-3 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Updated last</span>
+        <span class="badge badge-secondary badge-pill">{{details.updated}}</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Created by</h6>
+          </div>
+          <span class="text-muted">{{issue.owner}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Time created</h6>
+          </div>
+          <span class="text-muted">{{details.created}}</span>
+        </li>
+      </ul>
+    </div>
 
-  Description: {{details.description}}<br><br>
-  Assigned to: {{details.assigned}}<br><br>
-  Time created: {{details.created}}<br><br>
-  Last updated {{details.updated}}<br><br>
+    <div class="col-md-8 order-md-2 mb-4">
+      <div class="row d-flex align-items-lg-start">
+        <div class="col-lg col-md-2">
 
+
+          <table class="table table-borderless table-hover">
+            <tbody>
+            <tr>
+              <td></td>
+              <td class="align-middle"><h4>Current status is</h4></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{issue.status}}</span></h2></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="align-middle"><h4>Project</h4></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{issue.project}}</span></h2></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="align-middle"><h4>Assigned to</h4></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{details.assigned}}</span></h2></td>
+            </tr>
+            </tbody>
+          </table>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 order-md-1 mb-4">
+    <hr>
+    <h2>
+      Full description
+    </h2>
+    <p>{{details.description}}</p>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019 Miłosz Szwedo</p>
+  </footer>
 </div>
-<div class="row" *ngIf="issue != null">
-  issue_key {{issue.issue_key}}<br><br>
-  status {{issue.status}}<br><br>
-  Priority: {{issue.priority}}<br><br>
-  owner {{issue.owner}}<br><br>
-  project {{issue.project}}<br><br>
-</div>
+

@@ -11,10 +11,12 @@ import {Issue} from '../../entities/issue.model';
 })
 export class FullIssueComponent implements OnInit, OnDestroy {
   id : number;
-  private subscription: Subscription;
+  private detailSubscription: Subscription;
+  private issueSubscription: Subscription;
 
   issue: Issue = null;
   details: IssueDetail = null;
+
 
   constructor( private route: ActivatedRoute,
                private issueService: IssueService) {
@@ -22,17 +24,21 @@ export class FullIssueComponent implements OnInit, OnDestroy {
 
   ngOnInit() :void {
     this.route.params.subscribe((params: Params) => this.id = +params['id']);
+
     this.issueService.fetchDetail(this.id);
     this.details = this.issueService.getDetail();
-    this.subscription = this.issueService.detailChanged.subscribe(
-      (newDetail : IssueDetail) => this.details = newDetail
-    );
-    this.issue = this.issueService.getSingleIssue(this.id);
+    this.detailSubscription = this.issueService.detailChanged.subscribe(
+      (newDetail : IssueDetail) => this.details = newDetail);
 
+    this.issueService.fetchSingleIssue(this.id);
+    this.issue = this.issueService.getSingleIssue(this.id);
+    this.issueSubscription = this.issueService.singleIssueSubject.subscribe(
+      (newIssue : Issue) => this.issue = newIssue);
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.detailSubscription.unsubscribe();
+    this.issueSubscription.unsubscribe();
   }
 
 }

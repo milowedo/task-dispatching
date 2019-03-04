@@ -16,7 +16,7 @@ export class IssueListComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.issueService.fetchAllIssues();
     this.issues = this.issueService.getIssues();
-    this.subscription = this.issueService.issueChanged.subscribe(
+    this.subscription = this.issueService.issuesChanged.subscribe(
       (newIssues : Issue[]) =>
         this.issues = newIssues
     )
