@@ -36,7 +36,7 @@ values (1, 'john','locke', 'JOHLOC', 'finances' ),
 create table if not exists `issue` (
                                      `issue_id` INT(11) not null auto_increment,
                                      `issue_key` varchar(10),
-                                     `status` ENUM('To do', 'In progress', 'code review', 'done') not null,
+                                     `status` ENUM('to do', 'in progress', 'code review', 'done') not null,
                                      `summary` varchar(100),
                                      `owner` varchar(50),
                                      `project_name` varchar(50),
