@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {IssueService} from '../../services/issue.service';
 import {Subscription} from 'rxjs';
 import {IssueDetail} from '../../entities/issueDetail.model';
@@ -21,6 +21,7 @@ export class FullIssueComponent implements OnInit, OnDestroy {
 
 
   constructor( private route: ActivatedRoute,
+               private router: Router,
                private issueService: IssueService) {
   }
 
@@ -60,5 +61,9 @@ export class FullIssueComponent implements OnInit, OnDestroy {
     let h = date.getHours();
     let min = date.getMinutes();
     return '' + h +':' + min + " " +d + ' ' + m;
+  }
+
+  editClicked() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 }

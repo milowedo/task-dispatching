@@ -34,7 +34,7 @@ public class Issue extends Resolvable {
 
     @Column(name = "summary")
     private String summary;
-    
+
     @Column
     private String assigned;
 

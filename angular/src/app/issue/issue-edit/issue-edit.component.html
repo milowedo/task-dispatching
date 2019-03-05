@@ -1,7 +1,8 @@
 <div class="row">
+  <!-- header -->
   <div class="col">
     <br>
-    <h1 class="display-4">Hello {{loggedUserName}}, you are now adding an issue</h1>
+    <h1 class="display-4">Hello {{loggedUserName}}, you are now {{isThisEditMode ? 'editing' : 'adding'}} an issue</h1>
     <br>
     <div class="progress" style="height: 1px;">
       <div class="progress-bar bg-success"
@@ -30,7 +31,7 @@
                    (blur)="progressKEY = 20"
                    formControlName="key"
                    class="form-control"
-                   placeholder="ABC-123"
+                   placeholder="XYZ-99"
                    aria-label="key"
                    id="issue_key">
           </div>
@@ -58,7 +59,7 @@
                    (blur)="progressPRIORITY = 20"
                    formControlName="priority"
                    class="form-control"
-                   placeholder="1-9">
+                   placeholder="1">
           </div>
           <div class="positive" *ngIf="issueForm.get('priority').valid && issueForm.get('priority').touched">
             Looks good.
@@ -80,7 +81,7 @@
                    (blur)="progressTEAM = 20"
                    formControlName="project"
                    class="form-control"
-                   placeholder="medic-center"
+                   placeholder="mars-landing-101"
                    aria-label="project_name"
                    id="project_name">
           </div>
@@ -103,7 +104,7 @@
                       maxlength="500"
                       rows="4"
                       formControlName="description"
-                      placeholder="describe the issue with all possible details"
+                      placeholder="issue description with all possible details"
                       aria-label="summary"
                       id="description"></textarea>
           </div><div class="positive" *ngIf="issueForm.get('description').valid && issueForm.get('description').touched">
@@ -125,7 +126,7 @@
                        rows="1"
                        formControlName="summary"
                        class="form-control"
-                       placeholder="short description goes here"
+                       placeholder="summary of the problem goes here"
                        aria-label="summary"
                           id="summary"></textarea>
           </div>

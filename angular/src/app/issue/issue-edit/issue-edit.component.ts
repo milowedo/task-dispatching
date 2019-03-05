@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {IssueService} from '../../services/issue.service';
 import {Subscription} from 'rxjs';
 import {IssueDetail} from '../../entities/issueDetail.model';
@@ -26,7 +26,9 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   progressDESCLONG: number = 0;
   progressDESCSHORT: number = 0;
 
-  constructor(private route: ActivatedRoute, private issueService: IssueService) {}
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private issueService: IssueService) {}
 
   ngOnInit() {
     this.route.params
@@ -83,6 +85,8 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   }
 
   leaveEdit() {
+    this.issueForm.reset();
+    this.router.navigate(['..'], {relativeTo: this.route});
   }
 
   getProgress() {
