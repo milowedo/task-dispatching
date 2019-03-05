@@ -12,6 +12,11 @@ export class IssueEditComponent implements OnInit {
   id: number = -1;
   isThisEditMode: boolean = false;
   loggedUserName : string = 'John';
+  progressKEY: number = 0;
+  progressPRIORITY: number = 0;
+  progressTEAM: number = 0;
+  progressDESCLONG: number = 0;
+  progressDESCSHORT: number = 0;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -23,7 +28,7 @@ export class IssueEditComponent implements OnInit {
           this.isThisEditMode = (this.id > 0);
           this.initializeForm();
         }
-      )
+      );
   }
 
   private initializeForm(){
@@ -46,6 +51,14 @@ export class IssueEditComponent implements OnInit {
   }
 
   leaveEdit() {
+  }
 
+  getProgress() {
+    return this.progressKEY
+      +this.progressPRIORITY
+      +this.progressTEAM
+      +this.progressDESCSHORT
+      +this.progressDESCLONG
+      +'%';
   }
 }
