@@ -26,7 +26,7 @@
           <div>
             <h6 class="my-0">Created by</h6>
           </div>
-          <span class="text-muted">{{details.owner}}</span>
+          <span *ngIf="details" class="text-muted">{{details.owner}}</span>
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>

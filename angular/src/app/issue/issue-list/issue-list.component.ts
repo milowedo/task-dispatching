@@ -8,7 +8,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './issue-list.component.html'
 })
 export class IssueListComponent implements OnInit, OnDestroy{
-  private subscription: Subscription;
+  private subscription: Subscription = null;
   issues: Issue[];
 
   constructor(private issueService: IssueService) {}
@@ -23,7 +23,9 @@ export class IssueListComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   filter(issues: Issue[], todo: string) :Issue[]{

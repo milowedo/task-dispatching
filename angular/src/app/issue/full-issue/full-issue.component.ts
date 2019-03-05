@@ -11,8 +11,8 @@ import {Issue} from '../../entities/issue.model';
 })
 export class FullIssueComponent implements OnInit, OnDestroy {
   id : number;
-  private detailSubscription: Subscription;
-  private issueSubscription: Subscription;
+  private detailSubscription: Subscription = null;
+  private issueSubscription: Subscription = null;
 
   issue: Issue = null;
   details: IssueDetail = null;
@@ -32,10 +32,9 @@ export class FullIssueComponent implements OnInit, OnDestroy {
     this.detailSubscription = this.issueService.detailChanged.subscribe(
       (newDetail : IssueDetail) => {
         this.details = newDetail;
-        let createdDate:Date = new Date(this.details.created);
-        this.createdInString = this.dateToYMD(createdDate);
-        let updateDate:Date = new Date(this.details.updated);
-        this.updatedInString = this.dateToYMD(updateDate);
+
+        this.createdInString = this.dateToYMD(new Date(this.details.created));
+        this.updatedInString = this.dateToYMD(new Date(this.details.updated));
       });
 
     this.issueService.fetchSingleIssue(this.id);
@@ -46,8 +45,12 @@ export class FullIssueComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.detailSubscription.unsubscribe();
-    this.issueSubscription.unsubscribe();
+    if(this.detailSubscription) {
+      this.detailSubscription.unsubscribe();
+    }
+    if(this.issueSubscription) {
+      this.issueSubscription.unsubscribe();
+    }
   }
 
   dateToYMD(date) {

@@ -52,12 +52,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" >priority</span>
             </div>
-            <input type="text"
+            <input type="number"
+                   max="9"
+                   min="1"
                    (blur)="progressPRIORITY = 20"
                    formControlName="priority"
                    class="form-control"
-                   placeholder="1-9"
-                   aria-label="Username">
+                   placeholder="1-9">
           </div>
           <div class="positive" *ngIf="issueForm.get('priority').valid && issueForm.get('priority').touched">
             Looks good.
