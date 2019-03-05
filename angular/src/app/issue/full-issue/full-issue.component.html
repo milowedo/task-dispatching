@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- header -->
   <div class="py-5 text-center">
     <h1>
       <span [ngClass]="{
@@ -15,10 +16,10 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 order-md-3 mb-4">
+    <div class="col-md-4 order-md-3 mb-3">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Updated last</span>
-        <span class="badge badge-secondary badge-pill">{{details.updated}}</span>
+        <span class="text-muted">Updated</span>
+        <span class="badge badge-primary badge-pill">{{updatedInString}}</span>
       </h4>
       <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -31,16 +32,15 @@
           <div>
             <h6 class="my-0">Time created</h6>
           </div>
-          <span class="text-muted">{{details.created}}</span>
+          <span class="text-muted">{{createdInString}}</span>
         </li>
       </ul>
     </div>
 
+    <!-- status, project name and assigned -->
     <div class="col-md-8 order-md-2 mb-4">
       <div class="row d-flex align-items-lg-start">
         <div class="col-lg col-md-2">
-
-
           <table class="table table-borderless table-hover">
             <tbody>
             <tr>
@@ -60,14 +60,12 @@
             </tr>
             </tbody>
           </table>
-
-
-
         </div>
       </div>
     </div>
   </div>
 
+  <!-- full description -->
   <div class="col-md-8 order-md-1 mb-4">
     <hr>
     <h2>
@@ -76,6 +74,7 @@
     <p>{{details.description}}</p>
   </div>
 
+  <!-- footer -->
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2019 Miłosz Szwedo</p>
   </footer>
