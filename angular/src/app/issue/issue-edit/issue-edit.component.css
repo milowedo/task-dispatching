@@ -8,15 +8,34 @@ textarea.ng-valid.ng-touched, input.ng-valid.ng-touched{
 
 .warning{
   color: red;
+  animation: 700ms alertAnimation forwards;
 }
 
 .positive{
   color: green;
+  animation: 700ms alertAnimation forwards;
+}
+
+div.input-group{
+  margin-top: 16px;
+  margin-bottom: 2px !important;
 }
 
 input, textarea{
   font-weight:500;
 }
-input::placeholder, textarea::placeholder{
+input::placeholder, textarea::placeholder
+{
   font-weight: normal;
+}
+
+@keyframes alertAnimation {
+  from{
+    opacity:0;
+    transform: translateY(-15px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

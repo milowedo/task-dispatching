@@ -15,16 +15,13 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   issueForm : FormGroup;
   id: number = -1;
   isThisEditMode: boolean = false;
-  loggedUserName : string = 'John';
+  loggedUserName : string = 'Maya';
   private detailSubscription : Subscription = null;
   private issueSubscription : Subscription = null;
+  private issue :Issue;
+  private detail :IssueDetail;
 
-
-  progressKEY: number = 0;
-  progressPRIORITY: number = 0;
-  progressTEAM: number = 0;
-  progressDESCLONG: number = 0;
-  progressDESCSHORT: number = 0;
+  inputProgressFields : number[] = [0,0,0,0,0];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -50,52 +47,61 @@ export class IssueEditComponent implements OnInit, OnDestroy {
 
 
     this.issueForm = new FormGroup({
-      'key' : new FormControl(key, Validators.required),
-      'priority' : new FormControl(priority),
-      'project' : new FormControl(project),
-      'description' : new FormControl(description),
-      'summary' : new FormControl(summary),
+      'key' : new FormControl(key,
+        Validators.compose([Validators.required,
+          Validators.pattern(/^[a-zA-Z]{1,3}-[1-9]{1,2}$/)])),
+
+      'priority' : new FormControl(priority,
+        Validators.compose([Validators.required,
+          Validators.min(1),
+          Validators.max(9)])),
+
+      'project' : new FormControl(project,
+        Validators.compose([Validators.required,
+          Validators.minLength(5)])),
+
+      'description' : new FormControl(description,
+        Validators.compose([Validators.required,
+          Validators.minLength(50),])),
+
+      'summary' : new FormControl(summary,
+        Validators.compose([Validators.required,
+          Validators.minLength(20)])),
     });
 
     if(this.isThisEditMode){
       this.issueService.fetchSingleIssue(this.id);
-      let issue = this.issueService.getSingleIssue(this.id);
+      this.issue = this.issueService.getSingleIssue(this.id);
       this.issueSubscription = this.issueService.singleIssueSubject.subscribe(
         (res : Issue) => {
+          this.issue = res;
           this.issueForm.patchValue({
             key : res.issue_key,
             priority : res.priority,
             project :res.project,
             summary : res.summary});
         });
-
-
       this.issueService.fetchDetail(this.id);
-      let detail = this.issueService.getDetail();
+      this.detail = this.issueService.getDetail();
       this.detailSubscription = this.issueService.detailChanged.subscribe(
         (res : IssueDetail) => {
-          detail = res;
+          this.detail = res;
           this.issueForm.patchValue({description: res.description});
         });
     }
   }
 
   onSubmit() {
-
+    console.log(this.issueForm);
   }
 
   leaveEdit() {
     this.issueForm.reset();
-    this.router.navigate(['..'], {relativeTo: this.route});
-  }
-
-  getProgress() {
-    return this.progressKEY
-      +this.progressPRIORITY
-      +this.progressTEAM
-      +this.progressDESCSHORT
-      +this.progressDESCLONG
-      +'%';
+    if(this.isThisEditMode) {
+      this.router.navigate(['..'], {relativeTo: this.route});
+    }else{
+      this.router.navigate(['..']);
+    }
   }
 
   ngOnDestroy(): void {
@@ -107,5 +113,20 @@ export class IssueEditComponent implements OnInit, OnDestroy {
     }
   }
 
+  getProgress() {
+    const width =  this.inputProgressFields.reduce(
+      function (a, b) {
+        return a + b
+      });
+    return width + '%';
+  }
 
+  setProgress(value : string, index :number) {
+    console.log("setting");
+    if(this.issueForm.get(value).valid){
+      this.inputProgressFields[index] = 20;
+    }else {
+      this.inputProgressFields[index] = 0;
+    }
+  }
 }
