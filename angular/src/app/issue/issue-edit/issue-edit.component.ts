@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Params} from '@angular/router';
+import {IssueService} from '../../services/issue.service';
 
 @Component({
   selector: 'app-issue-edit',
@@ -18,7 +19,7 @@ export class IssueEditComponent implements OnInit {
   progressDESCLONG: number = 0;
   progressDESCSHORT: number = 0;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private issueService: IssueService) {}
 
   ngOnInit() {
     this.route.params
@@ -37,6 +38,13 @@ export class IssueEditComponent implements OnInit {
     let project = '';
     let description = '';
     let summary = '';
+
+    if(this.isThisEditMode){
+      const issue = this.issueService.getSingleIssue(this.id);
+      this.issueService.fetchDetail(this.id);
+      const detail = this.issueService.getDetail();
+    }
+
     this.issueForm = new FormGroup({
       'key' : new FormControl(key, Validators.required),
       'priority' : new FormControl(priority),

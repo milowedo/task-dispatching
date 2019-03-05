@@ -16,8 +16,8 @@ public class IssueDetail {
     @Column
     private String description;
 
-    @Column
-    private String assigned;
+    @Column(name = "owner")
+    private String owner;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date created = new Date();

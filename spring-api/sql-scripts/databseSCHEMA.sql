@@ -38,7 +38,7 @@ create table if not exists `issue` (
                                      `issue_key` varchar(10),
                                      `status` ENUM('to do', 'in progress', 'code review', 'done') not null,
                                      `summary` varchar(100),
-                                     `owner` varchar(50),
+                                     `assigned` CHAR(6),
                                      `priority` TINYINT not null,
                                      `project_name` varchar(50),
                                      primary key (`issue_id`),
@@ -48,12 +48,12 @@ create table if not exists `issue` (
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
 
-insert into issue values (1, 'KIS-36', 'To do', 'client api does not return proper reservations', 'Mark Twain', 4, 'medic-center');
+insert into issue values (1, 'KIS-36', 'To do', 'client api does not return proper reservations', 'JOHLOC', 4, 'medic-center');
 
 create table if not exists `issue_detail` (
                                             `issue_id` int(11) not null primary key,
                                             `description` text,
-                                            `assigned` CHAR(6),
+                                            `owner` varchar(50),
                                             `created` timestamp default current_timestamp,
                                             `updated` timestamp default current_timestamp,
                                             foreign key(issue_id) references issue (issue_id)
@@ -61,8 +61,10 @@ create table if not exists `issue_detail` (
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8mb4;
 
-insert into issue_detail (issue_id, description,  assigned)
-values (1,'somebody once told me there was a problem','JOHLOC');
+insert into issue_detail (issue_id, description,  owner)
+values (1,
+        'Etiam tristique arcu ante, at elementum erat semper sed. Pellentesque arcu felis, imperdiet sed magna eu, euismod varius elit. Sed cursus ante ut augue scelerisque, vestibulum vulputate erat auctor. Morbi non iaculis tellus. Vestibulum lacus erat, facilisis et orci a, posuere tempor risus. Pellentesque ut elit rhoncus, elementum nibh eget, semper ex. Nam porta finibus sapien, et pulvinar elit bibendum sit amet. Phasellus pretium dictum dolor feugiat feugiat. Nam sagittis, urna vitae massa nunc.',
+        'Mark Twain');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

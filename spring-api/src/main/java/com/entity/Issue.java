@@ -34,9 +34,9 @@ public class Issue extends Resolvable {
 
     @Column(name = "summary")
     private String summary;
-
-    @Column(name = "owner")
-    private String owner;
+    
+    @Column
+    private String assigned;
 
     @Column(name = "project_name")
     private String project;

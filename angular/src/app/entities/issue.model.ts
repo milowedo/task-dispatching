@@ -4,6 +4,8 @@ export class Issue {
                public status: string,
                public priority: number,
                public summary: string,
-               public owner: Date,
-               public project : String) { }
+
+               public assigned: string,
+
+               public project : string) { }
 }
