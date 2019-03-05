@@ -9,14 +9,16 @@ export class HeaderComponent {
   isCollapsed = true;
 
 
-  constructor(              private router: Router) {
+  constructor(private router: Router) {
   }
 
   newIssue() {
     this.router.navigate(['/issue/new'] );
+    this.isCollapsed = true;
   }
 
   issues() {
     this.router.navigate(['/issues/'] );
+    this.isCollapsed = true;
   }
 }
