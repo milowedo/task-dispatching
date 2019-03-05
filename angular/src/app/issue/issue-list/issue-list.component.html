@@ -2,38 +2,66 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-lg-3 col-md-6">
+    <div cdkDropList
+         #todoList="cdkDropList"
+         [cdkDropListData]="todos"
+         [cdkDropListConnectedTo]="[progressList]"
+         (cdkDropListDropped)="drop($event)"
+         class="col-lg-3 col-md-6">
       <p class="text-center font-weight-bolder">To do</p>
       <hr>
-      <issue-element *ngFor="let element of filter(issues, 'to do'); let i= index;"
-                     [issue]="element" [id]="i">
+      <issue-element
+        *ngFor="let element of todos; let i= index;"
+        cdkDrag
+        [issue]="element" [id]="i">
       </issue-element>
       <br>
     </div>
 
-    <div class="col-lg-3 col-md-6">
-      <p class="text-center font-weight-bolder">In progess</p>
+    <div cdkDropList
+         #progressList="cdkDropList"
+         [cdkDropListData]="progresses"
+         [cdkDropListConnectedTo]="[todoList, reviewList]"
+         (cdkDropListDropped)="drop($event)"
+         class="col-lg-3 col-md-6">
+      <p class="text-center font-weight-bolder">In progress</p>
       <hr>
-      <issue-element *ngFor="let element of filter(issues, 'in progress'); let i= index;"
-                     [issue]="element" [id]="i">
+      <issue-element
+        *ngFor="let element of progresses; let i= index;"
+        cdkDrag
+        [issue]="element" [id]="i">
       </issue-element>
       <br>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div cdkDropList
+         #reviewList="cdkDropList"
+         [cdkDropListData]="reviews"
+         [cdkDropListConnectedTo]="[progressList,doneList]"
+         (cdkDropListDropped)="drop($event)"
+         class="col-lg-3 col-md-6">
       <p class="text-center font-weight-bolder">Code Review</p>
       <hr>
-      <issue-element *ngFor="let element of filter(issues, 'code review'); let i= index;"
-                     [issue]="element" [id]="i">
+      <issue-element
+        *ngFor="let element of reviews; let i= index;"
+        cdkDrag
+        [issue]="element" [id]="i">
       </issue-element>
       <br>
     </div>
 
-    <div class="col-lg-3 col-md-6">
+    <div cdkDropList
+         #doneList="cdkDropList"
+         [cdkDropListData]="dones"
+         [cdkDropListConnectedTo]="[todoList, reviewList]"
+         (cdkDropListDropped)="drop($event)"
+         class="col-lg-3 col-md-6">
       <p class="text-center font-weight-bolder">Done</p>
       <hr>
-      <issue-element *ngFor="let element of filter(issues, 'done'); let i= index;"
-                     [issue]="element" [id]="i">
+      <issue-element
+        *ngFor="let element of dones; let i= index;"
+        cdkDrag
+        [issue]="element" [id]="i">
       </issue-element>
       <br>
     </div>

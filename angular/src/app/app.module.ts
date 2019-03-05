@@ -19,6 +19,7 @@ import {IssueService} from './services/issue.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {RouterModule} from '@angular/router';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule,
   ],
   providers: [
     [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }],
