@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {NavbarService} from '../services/navbar.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent {
   isCollapsed = true;
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public nav: NavbarService) {
   }
 
   newIssue() {
