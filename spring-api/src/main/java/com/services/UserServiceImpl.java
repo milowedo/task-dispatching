@@ -44,4 +44,10 @@ public class UserServiceImpl extends ServicePoll implements UserServiceInterface
         userDaoInterface.deleteUser(theId);
     }
 
+    @Override
+    @Transactional
+    public User getUserByKey(String key) {
+        return userDaoInterface.getUserByKey(key);
+    }
+
 }

@@ -54,6 +54,16 @@ public class UserDaoImpl implements UserDaoInterface {
 		theQuery.setParameter("userID", theId);
 		theQuery.executeUpdate();		
 	}
+
+	@Override
+	public User getUserByKey(String key) {
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		Query<User> theQuery =
+				currentSession.createQuery("from User where user_key=:userKEY", User.class);
+		theQuery.setParameter("userKEY", key);
+		return theQuery.getSingleResult();
+	}
 }
 
 
