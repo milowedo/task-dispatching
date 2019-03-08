@@ -6,6 +6,7 @@ import {IssueEditComponent} from './issue/issue-edit/issue-edit.component';
 import {FullIssueComponent} from './issue/full-issue/full-issue.component';
 import {IssueTabComponent} from './issue/issue-tab.component';
 import {LoginComponent} from './login/login.component';
+import {SuccessfulLoginComponent} from './login/successful-login/successful-login.component';
 
 const appRoutes = [
   {path: 'issueSub', component: IssueSubComponent},
@@ -19,8 +20,9 @@ const appRoutes = [
       {path:':id', component: FullIssueComponent},
       {path:':id/edit', component: IssueEditComponent},
     ]},
-  {path: 'welcome', component: LoginComponent},
-  {path: '', redirectTo: '/welcome', pathMatch: 'full'}
+  {path: 'login', component: LoginComponent},
+  {path:'welcome', component: SuccessfulLoginComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
