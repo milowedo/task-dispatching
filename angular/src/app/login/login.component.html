@@ -1,0 +1,33 @@
+<div class="container" id="login">
+  <div class="row">
+    <div class="col-md-16">
+
+      <div class="well login-box">
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+          <h1 style="text-align: center">Good to see you</h1>
+
+          <div class="alert alert-danger" *ngIf="loginFailed">
+            <p>Wrong password or/and username</p>
+          </div>
+
+          <div class="form-group">
+            <input value='' formControlName="userkey" placeholder="userkey" type="text"
+                   class="form-control"/>
+          </div>
+
+          <div class="form-group">
+            <input id="password" type="password" value='' placeholder="password" formControlName="password"
+                   class="form-control"/>
+          </div>
+
+          <div class="form-group text-center">
+            <button class="btn btn-success" type="submit">Login</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
