@@ -58,7 +58,6 @@ public class UserDaoImpl implements UserDaoInterface {
 	@Override
 	public User getUserByKey(String key) {
 		Session currentSession = sessionFactory.getCurrentSession();
-
 		Query<User> theQuery =
 				currentSession.createQuery("from User where user_key=:userKEY", User.class);
 		theQuery.setParameter("userKEY", key);

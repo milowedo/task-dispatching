@@ -12,6 +12,7 @@ USE `myjira` ;
 drop table if exists `user`;
 drop table if exists `issue`;
 drop table if exists `issue_detail`;
+drop table if exists `credentials`;
 
 create table if not exists `user` (
                                     `user_id` INT(11) not null auto_increment,
@@ -19,6 +20,7 @@ create table if not exists `user` (
                                     `surname` VARCHAR(45) not null,
                                     `user_key` CHAR(6) not null,
                                     `department` VARCHAR(45) not null,
+                                    `password` char(60) not null, /*fixed 60char bcrypted pass*/
                                     primary key (`user_id`),
                                     UNIQUE KEY `fullname` (`name`,`surname`),
                                     check (user_key REGEXP '[A-Z]{6}')
@@ -31,6 +33,24 @@ values (1, 'john','locke', 'JOHLOC', 'finances' ),
        (2, 'tyler','game', 'TYLGAM','finances'),
        (3, 'joe','macron', 'JOEMAC','human resources'),
        (4, 'rob','halford', 'ROBHAL','management');
+
+
+create table if not exists `credentials` (
+                                    `user_key` CHAR(6) not null,
+                                    `password` char(60) not null,
+                                    primary key (`user_key`),
+                                    check (user_key REGEXP '[A-Z]{6}')
+)
+  ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8;
+
+insert into credentials values
+                               ('JOHLOC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
+                               ('TYLGAM', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
+                               ('JOEMAC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
+                               ('ROBHAL', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK');
+
+
 
 -- ISSUE TABLE
 create table if not exists `issue` (
