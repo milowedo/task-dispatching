@@ -1,7 +1,7 @@
 import {Issue} from '../entities/issue.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {api_address, issue_detail_endpoint, issue_endpoint} from '../globals/globals';
+import {api_address, detail_endpoint, issue_endpoint} from '../globals/globals';
 import {Subject} from 'rxjs';
 import {IssueDetail} from '../entities/issueDetail.model';
 
@@ -46,7 +46,7 @@ export class IssueService {
   }
 
   public fetchDetail(id: number){
-    let address = api_address+issue_detail_endpoint+id.toString();
+    let address = api_address+detail_endpoint+id.toString();
     this.httpClient
       .get<IssueDetail>(address, this.httpOptions)
       .subscribe(

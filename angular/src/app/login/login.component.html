@@ -8,10 +8,10 @@
           <h1 style="text-align: center">Good to see you</h1>
 
           <div class="form-group">
-            <input id="userkey"
+            <input id="key"
                    (focus)="setLoginFailed(false)"
-                   formControlName="userkey"
-                   placeholder="userkey"
+                   formControlName="key"
+                   placeholder="user key"
                    type="text"
                    class="form-control"/>
           </div>
@@ -26,7 +26,7 @@
           </div>
 
           <div class="alert alert-danger" *ngIf="getLoginFailed()">
-            <p>Wrong password or/and username</p>
+            <p>Wrong password or/and userkey</p>
           </div>
 
           <div class="form-group text-center">

@@ -1,3 +1,3 @@
 export class LoginModel{
-  constructor(private userkey :string, private password :string){}
+  constructor(public key :string, private password :string){}
 }
