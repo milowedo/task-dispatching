@@ -1,4 +1,4 @@
-export class Employee extends Object{
+export class User extends Object{
   constructor(public id: number,
               public name: string,
               public surname: string,

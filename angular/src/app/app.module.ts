@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import {HttpResponseInterceptor} from './response-interceptor';
 import {DEFAULT_TIMEOUT, HttpRequestInterceptor} from './request-interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +19,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {LoginComponent} from './login/login.component';
+import {UserService} from './services/user.service';
+import { SuccessfulLoginComponent } from './login/successful-login/successful-login.component';
+import {NavbarService} from './services/navbar.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     IssueListElementComponent,
     FullIssueComponent,
     IssueTabComponent,
+    LoginComponent,
+    SuccessfulLoginComponent,
   ],
   imports: [
     NgbModule.forRoot(),
@@ -47,12 +52,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     DragDropModule,
   ],
   providers: [
-    [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true }],
+    [{ provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true }],
     [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }],
-    {provide: HTTP_INTERCEPTORS,
-      useClass: HttpResponseInterceptor,
-      multi: true},
     IssueService,
+    UserService,
+    NavbarService,
   ],
   bootstrap: [AppComponent]
 })
