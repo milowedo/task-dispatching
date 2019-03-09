@@ -75,8 +75,7 @@ create table if not exists `issue_detail` (
                                             `description` text,
                                             `owner` varchar(50),
                                             `created` timestamp default current_timestamp,
-                                            `updated` timestamp default current_timestamp,
-                                            foreign key(issue_id) references issue (issue_id)
+                                            `updated` timestamp default current_timestamp
 )
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8mb4;
