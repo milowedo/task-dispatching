@@ -1,7 +1,7 @@
 import {Issue} from '../entities/issue.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {api_address, detail_endpoint, issue_endpoint} from '../globals/globals';
+import {api_address, api_new_keyword, detail_endpoint, issue_endpoint} from '../globals/globals';
 import {Subject} from 'rxjs';
 import {IssueDetail} from '../entities/issueDetail.model';
 
@@ -77,5 +77,22 @@ export class IssueService {
   }
   public getIssues(){
     return this.issues;
+  }
+
+  saveIssue(issue: Issue, detail: IssueDetail) {
+    let issue_address : string = api_address+issue_endpoint+api_new_keyword;
+    let detail_address : string = api_address+detail_endpoint+api_new_keyword;
+    this.httpClient.post<Issue>(issue_address, issue)
+      .subscribe(res => {
+        issue.id = res.id;
+        detail.id = res.id;
+        this.httpClient.post<IssueDetail>(detail_address, detail)
+          .subscribe(()=> {});
+      });
+    this.issues.push(issue);
+
+    this.detailChanged.next(detail);
+    this.singleIssueSubject.next(issue);
+    this.issuesChanged.next(this.issues.slice());
   }
 }

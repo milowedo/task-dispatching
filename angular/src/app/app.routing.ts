@@ -20,6 +20,10 @@ const appRoutes = [
       {path:':id', component: FullIssueComponent},
       {path:':id/edit', component: IssueEditComponent},
     ]},
+  {path: 'fresh', component: IssueTabComponent,
+    children: [
+      {path:':id', component: FullIssueComponent},
+  ]},
   {path: 'login', component: LoginComponent},
   {path:'welcome', component: SuccessfulLoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}

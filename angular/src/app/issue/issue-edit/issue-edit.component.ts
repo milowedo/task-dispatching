@@ -5,6 +5,7 @@ import {IssueService} from '../../services/issue.service';
 import {Subscription} from 'rxjs';
 import {IssueDetail} from '../../entities/issueDetail.model';
 import {Issue} from '../../entities/issue.model';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-issue-edit',
@@ -25,9 +26,11 @@ export class IssueEditComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private issueService: IssueService) {}
+              private issueService: IssueService,
+              private userService: UserService) {}
 
   ngOnInit() {
+    this.loggedUserName = this.userService.user.name;
     this.route.params
       .subscribe(
         (param : Params) => {
@@ -91,16 +94,50 @@ export class IssueEditComponent implements OnInit, OnDestroy {
     }
   }
 
+
   onSubmit() {
-    console.log(this.issueForm);
+    let createdTime;
+    let issueID = 0;
+    let assigned = '';
+    let status = 'to do';
+    let owner = this.loggedUserName;
+    if(this.isThisEditMode) {
+      createdTime = this.detail.created;
+      issueID = this.issue.id;
+      assigned = this.issue.assigned;
+      status = this.issue.status;
+      owner = this.detail.owner;
+    }else{
+      createdTime = new Date();
+    }
+
+    const issue = new Issue(
+      issueID,
+      this.issueForm.get('key').value,
+      status,
+      this.issueForm.get('priority').value,
+      this.issueForm.get('summary').value,
+      assigned,
+      this.issueForm.get('project').value,
+      );
+
+    const detail = new IssueDetail(
+      issueID,
+      this.issueForm.get('description').value,
+      owner,
+      createdTime,//created
+      new Date(),//updated
+      );
+    this.issueService.saveIssue(issue, detail);
+    this.leaveEdit();
   }
 
   leaveEdit() {
     this.issueForm.reset();
     if(this.isThisEditMode) {
-      this.router.navigate(['..'], {relativeTo: this.route});
+      this.router.navigate(['/fresh/', this.id]);
     }else{
-      this.router.navigate(['..']);
+      this.router.navigate(['/issues']);
     }
   }
 

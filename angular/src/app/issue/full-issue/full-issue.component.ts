@@ -14,8 +14,9 @@ export class FullIssueComponent implements OnInit, OnDestroy {
   private detailSubscription: Subscription = null;
   private issueSubscription: Subscription = null;
 
-  issue: Issue = null;
+   issue: Issue = null;
   details: IssueDetail = null;
+
   createdInString : string = null;
   updatedInString : string = null;
 
@@ -27,13 +28,11 @@ export class FullIssueComponent implements OnInit, OnDestroy {
 
   ngOnInit() :void {
     this.route.params.subscribe((params: Params) => this.id = +params['id']);
-
     this.issueService.fetchDetail(this.id);
     this.details = this.issueService.getDetail();
     this.detailSubscription = this.issueService.detailChanged.subscribe(
       (newDetail : IssueDetail) => {
         this.details = newDetail;
-
         this.createdInString = this.dateToYMD(new Date(this.details.created));
         this.updatedInString = this.dateToYMD(new Date(this.details.updated));
       });
@@ -47,9 +46,11 @@ export class FullIssueComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if(this.detailSubscription) {
+      console.log("chuj")
       this.detailSubscription.unsubscribe();
     }
     if(this.issueSubscription) {
+      console.log("cjij")
       this.issueSubscription.unsubscribe();
     }
   }
@@ -66,4 +67,6 @@ export class FullIssueComponent implements OnInit, OnDestroy {
   editClicked() {
     this.router.navigate(['edit'], {relativeTo: this.route})
   }
+
+
 }
