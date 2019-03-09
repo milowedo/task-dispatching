@@ -18,7 +18,7 @@ export class SuccessfulLoginComponent implements OnInit {
     this.nav.show();
     const promise = new Promise((resolve => {
       setTimeout(() =>
-      resolve(), 2500);
+      resolve(), 1500);
     }));
     promise.then(() => {
       this.router.navigate(['/issues']);

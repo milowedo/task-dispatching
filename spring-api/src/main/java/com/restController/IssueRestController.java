@@ -57,9 +57,9 @@ public class IssueRestController {
 
     @PostMapping("/new")
     public ResponseEntity<?> addIssue(@RequestBody Issue issue){
-        System.out.println(issue.toString());
         int id = issueService.addIssue(issue);
-        return ResponseEntity.ok().body(id);
+        issue.setId(id);
+        return ResponseEntity.ok().body(issue);
     }
 
     @GetMapping("/all")
