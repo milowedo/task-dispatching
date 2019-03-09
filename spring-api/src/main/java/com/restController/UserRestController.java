@@ -55,6 +55,14 @@ public class UserRestController {
         else throw new UserNotFoundException("User not found: " + userID);
     }
 
+    @GetMapping("/key/{userKEY}")
+    public ResponseEntity<User> getUserByKey(@PathVariable String userKEY){
+        User value = userService.getUserByKey(userKEY);
+        if(value != null){
+            return ResponseEntity.ok().body(value);
+        }else throw new UserNotFoundException("No user with key" + userKEY);
+    }
+
     @PostMapping("/new")
     public ResponseEntity<?> addUser(@RequestBody User user){
         int id = this.userService.saveUser(user);

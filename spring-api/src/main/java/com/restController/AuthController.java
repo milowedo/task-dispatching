@@ -26,7 +26,7 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginForm loginRequest) {
-        Credentials credentials = credentialsServiceInterface.get(loginRequest.getUserkey());
+        Credentials credentials = credentialsServiceInterface.get(loginRequest.getKey());
         if(passwordEncoder.matches(
                 loginRequest.getPassword(), credentials.getPassword())) {
             return ResponseEntity.ok(credentials);
