@@ -23,7 +23,6 @@ import {LoginComponent} from './login/login.component';
 import {UserService} from './services/user.service';
 import { SuccessfulLoginComponent } from './login/successful-login/successful-login.component';
 import {NavbarService} from './services/navbar.service';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -3,6 +3,7 @@ import {Issue} from '../../entities/issue.model';
 import {IssueService} from '../../services/issue.service';
 import {Subscription} from 'rxjs';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-issue-list',
@@ -11,15 +12,25 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class IssueListComponent implements OnInit, OnDestroy{
   private subscription: Subscription = null;
+  private navigationSubscription;
   issues: Issue[];
   todos: Issue[];
   progresses: Issue[];
   reviews: Issue[];
   dones: Issue[];
 
-  constructor(private issueService: IssueService) {}
+  constructor(private issueService: IssueService, private router: Router) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+        this.initialize();
+      }
+    });
+  }
 
   ngOnInit(): void {
+    this.initialize();
+  }
+  private initialize() {
     this.issueService.fetchAllIssues();
     this.issues = this.issueService.getIssues();
     if(this.issues.length > 0)
@@ -59,4 +70,5 @@ export class IssueListComponent implements OnInit, OnDestroy{
         event.currentIndex);
     }
   }
+
 }

@@ -12,12 +12,8 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const timeoutValue = Number(request.headers.get('timeout')) || this.defaultTimeout;
-    console.log(request);
-    return next.handle(request).do(event => {
-      if(event instanceof HttpResponse) {
-        console.log(event);
-      }else console.log("nie jest typu http response")
-    })
+    //const timeoutValue = Number(request.headers.get('timeout')) || this.defaultTimeout;
+    //console.log(request);
+    return next.handle(request).do(event => {});
   }
 }

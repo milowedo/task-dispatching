@@ -135,7 +135,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   leaveEdit() {
     this.issueForm.reset();
     if(this.isThisEditMode) {
-      this.router.navigate(['/fresh/', this.id]);
+      this.router.navigate(['/issues']);
     }else{
       this.router.navigate(['/issues']);
     }

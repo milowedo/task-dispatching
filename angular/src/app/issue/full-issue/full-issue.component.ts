@@ -46,11 +46,9 @@ export class FullIssueComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if(this.detailSubscription) {
-      console.log("chuj")
       this.detailSubscription.unsubscribe();
     }
     if(this.issueSubscription) {
-      console.log("cjij")
       this.issueSubscription.unsubscribe();
     }
   }
@@ -61,6 +59,8 @@ export class FullIssueComponent implements OnInit, OnDestroy {
     let m = strArray[date.getMonth()];
     let h = date.getHours();
     let min = date.getMinutes();
+    if(min<10) min = '0'+min;
+    if(h<10) h = '0'+h;
     return '' + h +':' + min + " " +d + ' ' + m;
   }
 
