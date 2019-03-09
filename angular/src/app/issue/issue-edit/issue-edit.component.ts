@@ -128,7 +128,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       createdTime,//created
       new Date(),//updated
       );
-    this.issueService.saveIssue(issue, detail);
+    this.issueService.saveFullIssue(issue, detail);
     this.leaveEdit();
   }
 

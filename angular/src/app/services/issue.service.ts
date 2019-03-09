@@ -79,7 +79,14 @@ export class IssueService {
     return this.issues;
   }
 
-  saveIssue(issue: Issue, detail: IssueDetail) {
+  saveIssue(issue: Issue){
+    let issue_address : string = api_address+issue_endpoint+api_new_keyword;
+    this.httpClient.post<Issue>(issue_address, issue)
+      .subscribe(() => {});
+  }
+
+
+  saveFullIssue(issue: Issue, detail: IssueDetail) {
     let issue_address : string = api_address+issue_endpoint+api_new_keyword;
     let detail_address : string = api_address+detail_endpoint+api_new_keyword;
     this.httpClient.post<Issue>(issue_address, issue)

@@ -44,9 +44,21 @@ export class IssueListComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    if(this.subscription) {
+    if(this.subscription)
       this.subscription.unsubscribe();
-    }
+    this.lookForChanges(this.todos, 'to do');
+    this.lookForChanges(this.progresses, 'in progress');
+    this.lookForChanges(this.reviews, 'code review');
+    this.lookForChanges(this.dones, 'done');
+  }
+
+  lookForChanges(lane:Issue[], type){
+    lane.forEach((el) => {
+      if(el.status !== type){
+        el.status = type;
+        this.issueService.saveIssue(el);
+      }
+    });
   }
 
   segregateIssues(toBeSegregatedIssues : Issue[]){
