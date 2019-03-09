@@ -3,28 +3,30 @@
     <div class="col-md-16">
 
       <div class="well login-box">
-        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <form [formGroup]="loginForm" autocomplete="off" (ngSubmit)="submitForm()">
 
           <h1 style="text-align: center">Good to see you</h1>
 
-          <div class="alert alert-danger" *ngIf="loginFailed">
-            <p>Wrong password or/and username</p>
-          </div>
-
           <div class="form-group">
-            <input formControlName="userkey"
+            <input id="userkey"
+                   (focus)="setLoginFailed(false)"
+                   formControlName="userkey"
                    placeholder="userkey"
                    type="text"
-                   id="userkey"
                    class="form-control"/>
           </div>
 
           <div class="form-group">
             <input id="password"
-                   type="password"
-                   placeholder="password"
+                   (focus)="setLoginFailed(false)"
                    formControlName="password"
+                   placeholder="password"
+                   type="password"
                    class="form-control"/>
+          </div>
+
+          <div class="alert alert-danger" *ngIf="getLoginFailed()">
+            <p>Wrong password or/and username</p>
           </div>
 
           <div class="form-group text-center">

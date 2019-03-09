@@ -8,3 +8,24 @@
 h1 {
   padding-bottom: 30px;
 }
+
+.alert{
+  text-align: justify;
+  color: darkred;
+  animation: 400ms alertAnimation forwards;
+}
+
+@keyframes alertAnimation {
+  from{
+    opacity:0;
+    transform: translateY(-15px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input.ng-invalid.ng-touched{
+}
+
