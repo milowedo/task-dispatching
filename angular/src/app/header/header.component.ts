@@ -5,6 +5,7 @@ import {UserService} from '../services/user.service';
 import {Issue} from '../entities/issue.model';
 import {LongPoll} from '../globals/LongPoll';
 import {api_address} from '../globals/globals';
+import {IssueService} from '../services/issue.service';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit{
   constructor(@Inject(LongPoll) private longPoll : LongPoll,
               private router: Router,
               public nav: NavbarService,
-              public userService: UserService) {
+              public userService: UserService,
+              public issueService: IssueService) {
     longPoll.setUri(this.URI);
     longPoll.setCall(this.CALL);
   }
@@ -36,6 +38,7 @@ export class HeaderComponent implements OnInit{
       this.longPoll.dataEmitter.subscribe(
         data => {
           this.issue = data;
+          this.issueService.addIssue(data);
           new Promise(() => {
             setTimeout(() => this.issue = null, 10000)
           });

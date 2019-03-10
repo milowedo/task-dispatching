@@ -33,6 +33,9 @@ public class User extends Resolvable {
     @Column(name = "department")
     private String teamName;
 
+    @Column(name = "image")
+    private String image;
+
 //	@Column(name="email")
 //	private String email;
 	

@@ -54,7 +54,7 @@
       <img
         height="42" width="42"
         style="border-radius: 50%"
-        src="https://experience.sap.com/fiori-design-web/wp-content/uploads/sites/5/2017/02/Avatar-Sizes-Custom-1.png" alt="Avatar">
+        [src]="userService.user ? userService.user.image : 'https://experience.sap.com/fiori-design-web/wp-content/uploads/sites/5/2017/02/Avatar-Sizes-Custom-1.png'" alt="Avatar">
     </div>
     </div>
   </div>

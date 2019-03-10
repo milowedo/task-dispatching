@@ -34,6 +34,11 @@ export class IssueService {
         (res: Issue) => this.setIssue(res)
       );
   }
+
+  public addIssue(issue : Issue){
+    this.issues.push(issue);
+    this.issuesChanged.next(this.issues.slice());
+  }
   private setIssue(issue: Issue){
     this.issue = issue;
     this.singleIssueSubject.next(this.issue);

@@ -20,6 +20,7 @@ create table if not exists `user` (
                                     `surname` VARCHAR(45) not null,
                                     `user_key` CHAR(6) not null,
                                     `department` VARCHAR(45) not null,
+                                    `image` varchar(100),
                                     `password` char(60) not null, /*fixed 60char bcrypted pass*/
                                     primary key (`user_id`),
                                     UNIQUE KEY `fullname` (`name`,`surname`),

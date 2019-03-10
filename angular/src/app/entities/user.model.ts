@@ -3,5 +3,6 @@ export class User extends Object{
               public name: string,
               public surname: string,
               public key: string,
-              public teamName: string) {super()}
+              public teamName: string,
+              public image: string) {super()}
 }

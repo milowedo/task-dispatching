@@ -129,7 +129,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       new Date(),//updated
       );
     this.issueService.saveFullIssue(issue, detail);
-    this.leaveEdit();
+    setTimeout(this.leaveEdit(), 300);
   }
 
   leaveEdit() {
@@ -151,6 +151,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   }
 
   getProgress() {
+    if(this.isThisEditMode){return 0+'%'}
     const width =  this.inputProgressFields.reduce(
       function (a, b) {
         return a + b
