@@ -6,10 +6,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import {DropdownDirective} from './directives/dropdown.directive';
 import {AppRoutingModule} from './app.routing';
-import { ChangeIssueComponent } from './issue/issue-subscription/change-issue/change-issue.component';
-import { SubscribeIssueComponent } from './issue/issue-subscription/subscribe-issue/subscribe-issue.component';
 import { IssueListComponent } from './issue/issue-list/issue-list.component';
-import {IssueSubComponent} from './issue/issue-subscription/issue-sub.component';
 import { IssueEditComponent } from './issue/issue-edit/issue-edit.component';
 import { IssueListElementComponent } from './issue/issue-list/issue-list-element/issue-list-element.component';
 import { FullIssueComponent } from './issue/full-issue/full-issue.component';
@@ -30,10 +27,7 @@ import {AuthGuard} from './services/auth-guard.service';
     HeaderComponent,
     DropdownDirective,
     IssueListElementComponent,
-    ChangeIssueComponent,
-    SubscribeIssueComponent,
     IssueListComponent,
-    IssueSubComponent,
     IssueEditComponent,
     IssueListElementComponent,
     FullIssueComponent,

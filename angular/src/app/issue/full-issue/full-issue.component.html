@@ -2,7 +2,7 @@
   <!-- header -->
   <div class="py-5 text-center">
     <h1>
-      <span [ngClass]="{
+      <span *ngIf="issue" [ngClass]="{
                 'badge-danger': issue.priority >=7,
                 'badge-warning': issue.priority >=4,
                 'badge-success': issue.priority >=1
@@ -10,8 +10,8 @@
                   class="badge align-bottom rounded-bottom">
             {{issue.priority}}
           </span>
-      ISSUE {{issue.issue_key}}</h1>
-    <p class="lead">{{issue.summary}}</p>
+      ISSUE {{issue ? issue.issue_key: ''}}</h1>
+    <p class="lead">{{issue ? issue.summary: ''}}</p>
     <hr>
   </div>
 
@@ -48,17 +48,17 @@
             <tr>
               <td></td>
               <td class="align-middle"><h4>Current status is</h4></td>
-              <td><h2><span class="badge badge-secondary align-middle">{{issue.status}}</span></h2></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{issue ? issue.status : ''}}</span></h2></td>
             </tr>
             <tr>
               <td></td>
               <td class="align-middle"><h4>Project</h4></td>
-              <td><h2><span class="badge badge-secondary align-middle">{{issue.project}}</span></h2></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{issue ? issue.project: ''}}</span></h2></td>
             </tr>
             <tr>
               <td></td>
               <td class="align-middle"><h4>Assigned to</h4></td>
-              <td><h2><span class="badge badge-secondary align-middle">{{issue.assigned}}</span></h2></td>
+              <td><h2><span class="badge badge-secondary align-middle">{{issue ? issue.assigned: ''}}</span></h2></td>
             </tr>
             </tbody>
           </table>

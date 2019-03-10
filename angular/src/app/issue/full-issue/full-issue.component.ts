@@ -14,7 +14,7 @@ export class FullIssueComponent implements OnInit, OnDestroy {
   private detailSubscription: Subscription = null;
   private issueSubscription: Subscription = null;
 
-   issue: Issue = null;
+  issue: Issue = null;
   details: IssueDetail = null;
 
   createdInString : string = null;

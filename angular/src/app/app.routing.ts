@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {IssueListComponent} from './issue/issue-list/issue-list.component';
-import {IssueSubComponent} from './issue/issue-subscription/issue-sub.component';
 import {IssueEditComponent} from './issue/issue-edit/issue-edit.component';
 import {FullIssueComponent} from './issue/full-issue/full-issue.component';
 import {IssueTabComponent} from './issue/issue-tab.component';
@@ -10,7 +9,6 @@ import {SuccessfulLoginComponent} from './login/successful-login/successful-logi
 import {AuthGuard} from './services/auth-guard.service';
 
 const appRoutes: Routes = [
-  {path: 'issueSub', component: IssueSubComponent},
   {path: 'issues', component: IssueTabComponent,
     children: [
       {path:'', component: IssueListComponent, runGuardsAndResolvers : 'always',},
