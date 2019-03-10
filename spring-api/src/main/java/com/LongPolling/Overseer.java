@@ -16,14 +16,15 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 @Scope("singleton")
 public final class Overseer {
-    //private static Overseer instance = null;
 
     private static final long refreshTime = 600;
     private static final long TIMEOUT = 30000;
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
 
+
 //Singleton manual implementation, we do not need it, Spring does it for us
+//    private static Overseer instance = null;
 //    private Overseer(){
 //        System.out.println("Creating the overseer");
 //        try {
