@@ -21,7 +21,7 @@ export class IssueListComponent implements OnInit, OnDestroy{
 
   constructor(private issueService: IssueService, private router: Router) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
-      if (e instanceof NavigationEnd) {
+      if (e instanceof NavigationEnd || e.type == 'submit') {
         this.initialize();
       }
     });
@@ -54,6 +54,7 @@ export class IssueListComponent implements OnInit, OnDestroy{
 
   lookForChanges(lane:Issue[], type){
     lane.forEach((el) => {
+      console.log(type, el.status)
       if(el.status !== type){
         el.status = type;
         this.issueService.saveIssue(el);

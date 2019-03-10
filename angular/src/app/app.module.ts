@@ -23,6 +23,7 @@ import {LoginComponent} from './login/login.component';
 import {UserService} from './services/user.service';
 import { SuccessfulLoginComponent } from './login/successful-login/successful-login.component';
 import {NavbarService} from './services/navbar.service';
+import {AuthGuard} from './services/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import {NavbarService} from './services/navbar.service';
     IssueService,
     UserService,
     NavbarService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })

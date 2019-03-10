@@ -10,7 +10,6 @@ import {UserService} from '../services/user.service';
 export class HeaderComponent implements OnInit{
 
   isCollapsed = true;
-  username: string = '';
 
   ngOnInit(): void {
   }
@@ -28,9 +27,4 @@ export class HeaderComponent implements OnInit{
     this.isCollapsed = true;
   }
 
-  getUsername() {
-    if(this.username === '')
-      this.username = this.userService.user.name;
-    return this.username;
-  }
 }

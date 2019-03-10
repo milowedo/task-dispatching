@@ -5,14 +5,15 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UserService {
+  isAuthenticated = false;
   user: User;
   userNamePromise;
 
   constructor(private httpClient : HttpClient){}
 
-  isLoggedIn () {
+  checkAuthenticated () {
     return new Promise(
-      resolve => resolve(this.user != null));
+      resolve => resolve(this.isAuthenticated));
   }
 
   fetchUserByUserkey(userkey : string) {

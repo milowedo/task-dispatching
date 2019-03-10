@@ -37,11 +37,11 @@ export class LoginComponent implements OnInit {
   }
 
   logIn(loginModel: LoginModel) {
-
     this.httpClient
       .post<LoginModel>(this.LOGIN_API, loginModel)
       .subscribe(
         (data : LoginModel) => {
+          this.userService.isAuthenticated = true;
           this.userService.fetchUserByUserkey(data.key);
           this.userService.userNamePromise = this.userService.getUserName();
           this.router.navigate(['/welcome']);

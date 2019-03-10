@@ -7,22 +7,23 @@ import {FullIssueComponent} from './issue/full-issue/full-issue.component';
 import {IssueTabComponent} from './issue/issue-tab.component';
 import {LoginComponent} from './login/login.component';
 import {SuccessfulLoginComponent} from './login/successful-login/successful-login.component';
+import {AuthGuard} from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   {path: 'issueSub', component: IssueSubComponent},
   {path: 'issues', component: IssueTabComponent,
     children: [
-      {path:'', component: IssueListComponent},
-    ],
+      {path:'', component: IssueListComponent, runGuardsAndResolvers : 'always'},
+    ], canActivate: [AuthGuard],
   runGuardsAndResolvers : 'always'},
   {path: 'issue', component: IssueTabComponent ,
     children: [
       {path:'new', component: IssueEditComponent},
       {path:':id', component: FullIssueComponent},
       {path:':id/edit', component: IssueEditComponent},
-    ]},
+    ], canActivate: [AuthGuard],},
   {path: 'login', component: LoginComponent},
-  {path:'welcome', component: SuccessfulLoginComponent},
+  {path:'welcome', component: SuccessfulLoginComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
