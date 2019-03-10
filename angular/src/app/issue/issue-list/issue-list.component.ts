@@ -85,7 +85,7 @@ export class IssueListComponent implements OnInit, OnDestroy{
     if(arrayDroppedIn == 'todos'){
       event.container.data[event.currentIndex]['assigned'] = '';
     }else if(event.container.data[event.currentIndex]['assigned'] == '') {
-      event.container.data[event.currentIndex]['assigned'] = this.userService.user.name;
+      event.container.data[event.currentIndex]['assigned'] = this.userService.user.key;
     }
   }
 
