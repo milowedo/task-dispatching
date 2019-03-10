@@ -22,8 +22,11 @@ public class IssueServiceImpl extends ServicePoll implements IssueServiceInterfa
     @Override
     @Transactional
     public int addIssue(Issue issue) {
+        int isNew = issue.getId();
         int id = issueDaoFactory.addIssue(issue);
-        this.notifyOfChange(issue);
+        if(isNew == 0){
+            this.notifyOfChange(issue);
+        }
         return id;
     }
 
