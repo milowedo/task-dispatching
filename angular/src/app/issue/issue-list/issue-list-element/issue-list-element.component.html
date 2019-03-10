@@ -1,6 +1,10 @@
-<div style="cursor: pointer; padding-right: 10px; padding-left: 10px"
+<div style="cursor: pointer; padding-right: 10px; padding-left: 10px; padding-top: 4px"
     class="list-group-item list-group-item-action"
     (click)="issueSelected()">
+
+  <div class="text-right" style="font-size: 8px; padding-bottom: 4px; font-weight:bold">
+    {{issue.assigned ? issue.assigned : 'take me!'}}
+  </div>
 
   <div class="form-inline">
     <!-- badge with priority -->
@@ -28,6 +32,7 @@
                 (click)="detailsSelected()">Details</button>
       </div>
   </div>
+
 
   <hr *ngIf="isSelected">
   <div *ngIf="isSelected" class="form-inline">

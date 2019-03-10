@@ -6,8 +6,8 @@
          #todoList="cdkDropList"
          [cdkDropListData]="todos"
          [cdkDropListConnectedTo]="[progressList]"
-         (cdkDropListDropped)="drop($event)"
-         class="col-lg-3 col-md-6">
+         (cdkDropListDropped)="drop($event, 'todos')"
+         class="col-lg-3 col-md-6 col-sm-6">
       <p class="text-center font-weight-bolder">To do</p>
       <hr>
       <issue-element
@@ -23,7 +23,7 @@
          [cdkDropListData]="progresses"
          [cdkDropListConnectedTo]="[todoList, reviewList]"
          (cdkDropListDropped)="drop($event)"
-         class="col-lg-3 col-md-6">
+         class="col-lg-3 col-md-6 col-sm-6">
       <p class="text-center font-weight-bolder">In progress</p>
       <hr>
       <issue-element
@@ -39,7 +39,7 @@
          [cdkDropListData]="reviews"
          [cdkDropListConnectedTo]="[progressList,doneList]"
          (cdkDropListDropped)="drop($event)"
-         class="col-lg-3 col-md-6">
+         class="col-lg-3 col-md-6 col-sm-6">
       <p class="text-center font-weight-bolder">Code Review</p>
       <hr>
       <issue-element
@@ -55,7 +55,7 @@
          [cdkDropListData]="dones"
          [cdkDropListConnectedTo]="[todoList, reviewList]"
          (cdkDropListDropped)="drop($event)"
-         class="col-lg-3 col-md-6">
+         class="col-lg-3 col-md-6 col-sm-6">
       <p class="text-center font-weight-bolder">Done</p>
       <hr>
       <issue-element

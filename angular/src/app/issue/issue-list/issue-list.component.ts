@@ -3,7 +3,8 @@ import {Issue} from '../../entities/issue.model';
 import {IssueService} from '../../services/issue.service';
 import {Subscription} from 'rxjs';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {ActivationEnd, ChildActivationEnd, NavigationEnd, Router} from '@angular/router';
+import {ChildActivationEnd, NavigationEnd, Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-issue-list',
@@ -19,7 +20,9 @@ export class IssueListComponent implements OnInit, OnDestroy{
   reviews: Issue[];
   dones: Issue[];
 
-  constructor(private issueService: IssueService, private router: Router) {
+  constructor(private issueService: IssueService,
+              private router: Router,
+              private userService: UserService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if (e instanceof ChildActivationEnd || e instanceof NavigationEnd) {
         this.initialize();
@@ -72,14 +75,17 @@ export class IssueListComponent implements OnInit, OnDestroy{
     return issues.filter( issue => issue.status === todo);
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>, arrayDroppedIn?: string) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+      transferArrayItem(event.previousContainer.data, event.container.data,
+        event.previousIndex, event.currentIndex);
+    }
+    if(arrayDroppedIn == 'todos'){
+      event.container.data[event.currentIndex]['assigned'] = '';
+    }else if(event.container.data[event.currentIndex]['assigned'] == '') {
+      event.container.data[event.currentIndex]['assigned'] = this.userService.user.name;
     }
   }
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {NavbarService} from '../services/navbar.service';
 import {UserService} from '../services/user.service';
 
@@ -14,7 +14,10 @@ export class HeaderComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  constructor(private router: Router, public nav: NavbarService, public userService: UserService) {
+  constructor(private router: Router,
+              public nav: NavbarService,
+              public userService: UserService,
+              private route: ActivatedRoute) {
   }
 
   newIssue() {
@@ -23,7 +26,10 @@ export class HeaderComponent implements OnInit{
   }
 
   issues() {
-    this.router.navigate(['/issues/'] );
+    if(this.router.url == '/issues') {
+      this.router.navigate(['/issues', { queryParams: { 'refresh': 1 }} ]);
+    }
+    this.router.navigate(['/issues'] );
     this.isCollapsed = true;
   }
 
