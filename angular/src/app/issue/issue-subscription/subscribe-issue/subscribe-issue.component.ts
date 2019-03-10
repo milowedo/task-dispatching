@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {LongPoll} from '../../../globals/LongPoll';
 import {Issue} from '../../../entities/issue.model';
 import {api_address} from '../../../globals/globals';

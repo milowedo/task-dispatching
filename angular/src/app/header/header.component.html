@@ -1,6 +1,28 @@
 <nav *ngIf="nav.visible"
      class="navbar navbar-expand-lg navbar-dark bg-dark">
+
   <a class="navbar-brand" href="">Got work?</a>
+
+  <!-- new issue notification -->
+  <div *ngIf="issue" class="form-inline" style="color: white">
+    <!-- badge with priority -->
+    <div class="border-right">
+      <div class="col">
+          <span [ngClass]="{
+                'badge-danger': issue.priority >=7,
+                'badge-warning': issue.priority >=4,
+                'badge-success': issue.priority >=1
+                }"
+                class="badge badge-pill"
+                style="max-height: 20px">NEW!
+          </span>
+      </div>
+    </div>
+    <div class="col">
+       {{issue.project}}
+    </div>
+  </div>
+
   <button class="navbar-toggler btn"
           type="button" data-toggle="collapse"
           data-target="#navbarTogglerDemo02"
@@ -14,7 +36,6 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
       <li class="nav-item"
           style="cursor: pointer">
         <a class="nav-link" (click)="issues()">issues</a>
@@ -24,10 +45,9 @@
         <a class="nav-link" (click)="newIssue()">new issue</a>
       </li>
       <li>
-
       </li>
-
     </ul>
+
     <div *ngIf="isCollapsed" class="navbar-brand">
       <div class="form-inline">
       <h5 style="padding-right: 15px">{{userService.userNamePromise|async}}</h5>
@@ -38,4 +58,5 @@
     </div>
     </div>
   </div>
+
 </nav>
