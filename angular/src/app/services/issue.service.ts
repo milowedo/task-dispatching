@@ -97,7 +97,6 @@ export class IssueService {
           .subscribe(()=> {});
       });
     this.issues.push(issue);
-
     this.detailChanged.next(detail);
     this.singleIssueSubject.next(issue);
     this.issuesChanged.next(this.issues.slice());
