@@ -21,10 +21,18 @@ public class CredentialsDaoImpl implements CredentialsDaoInterface {
 
     @Override
     public Credentials getCredentials(String key) {
+        Query<Credentials> query;
+        //we have to decide if we got an email address(@) or user_key([A-Z]{6})
         Session currentSession = this.sessionFactory.getCurrentSession();
-        Query<Credentials> query = currentSession
-                .createQuery("from Credentials where user_key= :uKey", Credentials.class)
-                .setParameter("uKey", key);
+        if (!key.contains("@")) {
+            query = currentSession
+                    .createQuery("from Credentials where user_key= :uKey", Credentials.class)
+                    .setParameter("uKey", key);
+        }else {
+            query = currentSession
+                    .createQuery("from Credentials where email= :uEmail", Credentials.class)
+                    .setParameter("uEmail", key);
+        }
         return query.uniqueResult();
     }
 
