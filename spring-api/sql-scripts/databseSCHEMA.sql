@@ -21,6 +21,7 @@ create table if not exists `user` (
                                     `user_key` CHAR(6) not null,
                                     `department` VARCHAR(45) not null,
                                     `image` varchar(100),
+                                    `email` varchar(60) not null,
                                     `password` char(60) not null, /*fixed 60char bcrypted pass*/
                                     primary key (`user_id`),
                                     UNIQUE KEY `fullname` (`name`,`surname`),
@@ -29,16 +30,17 @@ create table if not exists `user` (
   ENGINE = InnoDB
   DEFAULT CHARACTER SET = utf8;
 
-insert into user (user_id, name, surname, user_key, department)
-values (1, 'john','locke', 'JOHLOC', 'finances' ),
-       (2, 'tyler','game', 'TYLGAM','finances'),
-       (3, 'joe','macron', 'JOEMAC','human resources'),
-       (4, 'rob','halford', 'ROBHAL','management');
+insert into user (user_id, name, surname, user_key, department, email)
+values (1, 'john','locke', 'JOHLOC', 'finances', 'johnlocke@gmail.com'),
+       (2, 'tyler','game', 'TYLGAM','finances', 'tylergame@gmail.com'),
+       (3, 'joe','macron', 'JOEMAC','human resources', 'joemacron@gmail.com'),
+       (4, 'rob','halford', 'ROBHAL','management', 'robhalford@gmail.com');
 
 
 create table if not exists `credentials` (
                                     `user_key` CHAR(6) not null,
                                     `password` char(60) not null,
+                                    `email` varchar(60) not null,
                                     primary key (`user_key`),
                                     check (user_key REGEXP '[A-Z]{6}')
 )
@@ -46,10 +48,10 @@ create table if not exists `credentials` (
   DEFAULT CHARACTER SET = utf8;
 
 insert into credentials values
-                               ('JOHLOC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
-                               ('TYLGAM', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
-                               ('JOEMAC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK'),
-                               ('ROBHAL', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK');
+                               ('JOHLOC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK', 'johnlocke@gmail.com'),
+                               ('TYLGAM', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK', 'tylergame@gmail.com'),
+                               ('JOEMAC', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK', 'joemacron@gmail.com'),
+                               ('ROBHAL', '$2a$10$NZR30j7vc5Nd3UZ1WZQnre3PAkMh1zG.4A3E9FlGbhVaGlT3zfkmK', 'robhalford@gmail.com');
 
 
 

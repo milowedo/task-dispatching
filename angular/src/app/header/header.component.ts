@@ -35,8 +35,7 @@ export class HeaderComponent implements OnInit{
 
   fetch(){
       this.longPoll.makeLongRequest();
-      this.longPoll.dataEmitter.subscribe(
-        data => {
+      this.longPoll.dataEmitter.subscribe(data => {
           this.issue = data;
           this.issueService.addIssue(data);
           new Promise(() => {
