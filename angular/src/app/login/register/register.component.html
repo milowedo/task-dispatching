@@ -1,0 +1,86 @@
+<div class="container" id="register">
+  <div class="row">
+    <div class="col-md-16">
+
+      <div class="well login-box">
+        <form [formGroup]="registerForm" autocomplete="off" (ngSubmit)="onSubmit()">
+
+          <h1 style="text-align: center">Sign yourself up</h1>
+
+          <div class="form-group">
+            <input id="name"
+                   (focus)="setRegisterFailed(false)"
+                   formControlName="name"
+                   placeholder="name"
+                   type="text"
+                   class="form-control"/>
+            <div class="warning" *ngIf="registerForm.controls['name'].hasError('minlength') && registerForm.get('name').touched ">
+              must be at least 2 characters long
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input id="surname"
+                   (focus)="setRegisterFailed(false)"
+                   formControlName="surname"
+                   placeholder="surname"
+                   type="text"
+                   class="form-control"/>
+
+            <div class="warning" *ngIf="registerForm.controls['surname'].hasError('minlength') && registerForm.get('surname').touched ">
+              must be at least 2 characters long
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input id="password"
+                   (focus)="setRegisterFailed(false)"
+                   formControlName="password"
+                   placeholder="password"
+                   type="password"
+                   class="form-control"/>
+            <div class="warning" *ngIf="registerForm.controls['password'].hasError('minlength') && registerForm.get('password').touched ">
+              should be longer than 6 characters
+            </div>
+          </div>
+          <div class="form-group">
+            <input id="passwordRetyped"
+                   (focus)="setRegisterFailed(false)"
+                   formControlName="passwordRetyped"
+                   placeholder="confirm password"
+                   type="password"
+                   pattern="{{registerForm.get('password').value}}"
+                   class="form-control"/>
+            <div class="warning" *ngIf="registerForm.controls['passwordRetyped'].hasError('pattern') && registerForm.get('passwordRetyped').touched ">
+              Password do not match
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <input id="email"
+                   (focus)="setRegisterFailed(false)"
+                   formControlName="email"
+                   placeholder="email"
+                   type="text"
+                   class="form-control"/>
+            <div class="positive" *ngIf="registerForm.get('email').valid && registerForm.get('email').touched">
+              looks good
+            </div>
+            <div class="warning" *ngIf="registerForm.controls['email'].hasError('email') && registerForm.get('email').touched ">
+              that is not a valid email address
+            </div>
+          </div>
+
+
+
+          <div class="form-group text-center">
+            <button class="btn btn-success" type="submit">Submit</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

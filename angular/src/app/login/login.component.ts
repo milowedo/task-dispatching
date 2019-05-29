@@ -51,11 +51,14 @@ export class LoginComponent implements OnInit {
         this.setLoginFailed(true);
         this.loginForm.patchValue({password: '', key: ''});
       }
-
     );
   }
 
   setLoginFailed(val : boolean) {this.loginFailed = val;}
 
   getLoginFailed():boolean{ return this.loginFailed}
+
+  goToRegisterPage() {
+    this.router.navigate(['/register']);
+  }
 }
