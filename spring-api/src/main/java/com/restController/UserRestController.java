@@ -1,6 +1,7 @@
 package com.restController;
 
 import com.LongPolling.State.RequestPromise;
+import com.entity.RegistrationModel;
 import com.entity.User;
 import com.LongPolling.Overseer;
 import com.exceptionHandlingStuff.UserNotFoundException;
@@ -36,14 +37,6 @@ public class UserRestController {
                 userService);
     }
 
-    @NotNull
-    @GetMapping("/trigger/{userID}")
-    public ResponseEntity<?> updateUser(@PathVariable int userID){
-        User temp = userService.getUser(userID);
-        userService.saveUser(temp);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
     //GET USER BY ID
     @GetMapping("/{userID}")
     public ResponseEntity<User> getUser(@PathVariable int userID){
@@ -63,9 +56,10 @@ public class UserRestController {
         }else throw new UserNotFoundException("No user with key" + userKEY);
     }
 
-    @PostMapping("/new")
-    public ResponseEntity<?> addUser(@RequestBody User user){
-        int id = this.userService.saveUser(user);
+    @PostMapping("/register")
+    public ResponseEntity<?> addUser(@RequestBody RegistrationModel regModel){
+        System.out.println("got the form " + regModel);
+        int id = this.userService.saveUser(regModel);
         return ResponseEntity.ok().body(id);
     }
 

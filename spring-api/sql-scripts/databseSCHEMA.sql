@@ -22,7 +22,6 @@ create table if not exists `user` (
                                     `department` VARCHAR(45) not null,
                                     `image` varchar(100),
                                     `email` varchar(60) not null,
-                                    `password` char(60) not null, /*fixed 60char bcrypted pass*/
                                     primary key (`user_id`),
                                     UNIQUE KEY `fullname` (`name`,`surname`),
                                     check (user_key REGEXP '[A-Z]{6}')

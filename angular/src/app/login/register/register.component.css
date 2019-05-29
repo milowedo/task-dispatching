@@ -1,0 +1,60 @@
+#register {
+  position: center;
+  width: 300px;
+  margin-top: 100px;
+}
+
+
+h1 {
+  padding-bottom: 30px;
+}
+
+.alert{
+  text-align: justify;
+  color: darkred;
+  animation: 400ms alertAnimation forwards;
+}
+
+textarea.ng-invalid.ng-touched, input.ng-invalid.ng-touched{
+  border: 1px solid red;
+
+}
+textarea.ng-valid.ng-touched, input.ng-valid.ng-touched{
+  border: 1px solid green;
+}
+
+.warning{
+  color: red;
+  animation: 700ms alertAnimation forwards;
+}
+
+.positive{
+  color: green;
+  animation: 700ms alertAnimation forwards;
+}
+
+div.input-group{
+  margin-top: 16px;
+  margin-bottom: 2px !important;
+}
+
+input, textarea{
+  font-weight:500;
+}
+input::placeholder, textarea::placeholder
+{
+  font-weight: normal;
+}
+
+@keyframes alertAnimation {
+  from{
+    opacity:0;
+    transform: translateY(-15px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

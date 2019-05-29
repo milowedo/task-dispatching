@@ -1,15 +1,20 @@
 import {User} from '../entities/user.model';
 import {HttpClient} from '@angular/common/http';
-import {api_address, userByKey_endpoint} from '../globals/globals';
+import {api_address, register_endpoint, user_endpoint, userByKey_endpoint} from '../globals/globals';
 import {Injectable} from '@angular/core';
+import {RegistrationModel} from '../entities/registration.model';
+import {LoginModel} from '../entities/login.model';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class UserService {
   isAuthenticated = false;
   user: User;
   userNamePromise;
+  private REGISTER_API = api_address + user_endpoint + register_endpoint;
 
-  constructor(private httpClient : HttpClient){}
+
+  constructor(private httpClient : HttpClient, private router: Router){}
 
   checkAuthenticated () {
     return new Promise(
@@ -18,6 +23,7 @@ export class UserService {
 
   fetchUserByUserkey(userkey : string) {
     let address :string = api_address + userByKey_endpoint + userkey;
+    console.log(address);
      this.httpClient
       .get<User>(address)
       .subscribe(
@@ -39,5 +45,19 @@ export class UserService {
           }, 100);
       }
     });
+  }
+
+  registerUser(info : RegistrationModel){
+    console.log(info);
+    this.httpClient
+      .post<LoginModel>(this.REGISTER_API, info)
+      .subscribe(
+        () => {
+          this.router.navigate(['/login']);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 }

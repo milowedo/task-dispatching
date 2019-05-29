@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDaoInterface {
 	@Override
 	public int saveUser(User theUser) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		System.out.println(theUser.toString());
+		System.out.println("saving new user: " + theUser.toString());
 		currentSession.saveOrUpdate(theUser);
 		return theUser.getId();
 	}
