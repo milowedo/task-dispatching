@@ -23,6 +23,8 @@ import {NavbarService} from './services/navbar.service';
 import {AuthGuard} from './services/auth-guard.service';
 import { RegisterComponent } from './login/register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FullUserProfileComponent } from './user-profile/full-user-profile/full-user-profile.component';
+import { UserProfileEditComponent } from './user-profile/user-profile-edit/user-profile-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SuccessfulLoginComponent,
     RegisterComponent,
     UserProfileComponent,
+    FullUserProfileComponent,
+    UserProfileEditComponent,
   ],
   imports: [
     NgbModule.forRoot(),

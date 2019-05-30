@@ -58,4 +58,7 @@ export class HeaderComponent implements OnInit{
     this.isCollapsed = true;
   }
 
+  userProfile() {
+    this.router.navigate(['/userProfile'] );
+  }
 }

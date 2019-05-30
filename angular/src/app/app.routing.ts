@@ -8,6 +8,8 @@ import {LoginComponent} from './login/login.component';
 import {SuccessfulLoginComponent} from './login/successful-login/successful-login.component';
 import {AuthGuard} from './services/auth-guard.service';
 import {RegisterComponent} from './login/register/register.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {FullUserProfileComponent} from './user-profile/full-user-profile/full-user-profile.component';
 
 const appRoutes: Routes = [
   {path: 'issues', component: IssueTabComponent,
@@ -24,6 +26,10 @@ const appRoutes: Routes = [
     ], canActivate: [AuthGuard],},
 
   {path: 'login', component: LoginComponent},
+  {path: 'userProfile', component: UserProfileComponent,
+    children: [
+      {path:':id', component: FullUserProfileComponent},
+      {path:':id/edit', component: FullUserProfileComponent}]},
   {path: 'register', component: RegisterComponent},
   {path:'welcome', component: SuccessfulLoginComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
