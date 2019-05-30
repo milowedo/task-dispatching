@@ -22,6 +22,7 @@ import { SuccessfulLoginComponent } from './login/successful-login/successful-lo
 import {NavbarService} from './services/navbar.service';
 import {AuthGuard} from './services/auth-guard.service';
 import { RegisterComponent } from './login/register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { RegisterComponent } from './login/register/register.component';
     LoginComponent,
     SuccessfulLoginComponent,
     RegisterComponent,
+    UserProfileComponent,
   ],
   imports: [
     NgbModule.forRoot(),
