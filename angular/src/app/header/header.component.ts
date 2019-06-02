@@ -59,6 +59,6 @@ export class HeaderComponent implements OnInit{
   }
 
   userProfile() {
-    this.router.navigate(['/userProfile'] );
+    this.router.navigate(['/userProfile/' + this.userService.user.key] );
   }
 }
