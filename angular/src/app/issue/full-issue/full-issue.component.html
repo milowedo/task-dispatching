@@ -58,7 +58,10 @@
             <tr>
               <td></td>
               <td class="align-middle"><h4>Assigned to</h4></td>
-              <td><h2><span class="badge badge-secondary align-middle">{{issue ? issue.assigned: ''}}</span></h2></td>
+              <td><h2><span id="assigned" (click)="assignedUserClicked()"
+                            data-tooltip="go to the profile" data-tooltip-position="right"
+                            class="badge badge-secondary align-middle">{{issue ? issue.assigned.toLowerCase(): ''}}
+              </span></h2></td>
             </tr>
             </tbody>
           </table>

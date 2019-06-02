@@ -24,13 +24,21 @@ export class UserService {
   fetchUserByUserkey(userkey : string) {
     let address :string = api_address + userByKey_endpoint + userkey;
     console.log(address);
-     this.httpClient
+    this.httpClient
       .get<User>(address)
       .subscribe(
         (res) => {
           this.user = res;
         });
   }
+
+  getUserByUserKey(userkey : string){
+    let address :string = api_address + userByKey_endpoint + userkey;
+    console.log(address);
+    return this.httpClient
+      .get<User>(address);
+  }
+
   getUserName(){
     return new Promise((resolve) => {
       if(typeof this.user === "undefined"){

@@ -8,6 +8,7 @@ import {Issue} from '../../entities/issue.model';
 @Component({
   selector: 'app-full-issue',
   templateUrl: './full-issue.component.html',
+  styleUrls: ['./full-issue.component.css'],
 })
 export class FullIssueComponent implements OnInit, OnDestroy {
   id : number;
@@ -69,4 +70,7 @@ export class FullIssueComponent implements OnInit, OnDestroy {
   }
 
 
+  assignedUserClicked() {
+    this.router.navigate(['userProfile/' + this.issue.assigned],)
+  }
 }
