@@ -1,0 +1,59 @@
+  <div class="container">
+    <!-- header -->
+    <div class="py-5 text-center">
+      <h1>{{user ? (user.name+' '+user.surname): ''}}</h1>
+      <hr>
+    </div>
+
+
+    <div class="row">
+      <!-- side container with photo-->
+      <div class="col-md-4 order-md-3 mb-3">
+        <img
+          width="444" height="444"
+          style="border-radius: 8px;"
+          [src]="user ? user.image :
+           'https://experience.sap.com/fiori-design-web/wp-content/uploads/sites/5/2017/02/Avatar-Sizes-Custom-1.png'"
+          alt="user profile">
+
+      </div>
+
+      <!-- user key, team name-->
+      <div class="col-md-8 order-md-2 mb-4">
+        <div class="row d-flex align-items-lg-start">
+          <div class="col-lg col-md-2">
+            <table class="table table-borderless table-hover">
+              <tbody>
+              <tr>
+                <td></td>
+                <td class="align-middle"><h4></h4></td>
+                <td><h2><span class="badge badge-secondary align-middle"></span></h2></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="align-middle"><h4>user key</h4></td>
+                <td><h2><span class="badge badge-secondary align-middle">{{user.key}}</span></h2></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="align-middle"><h4>team</h4></td>
+                <td><h2><span class="badge badge-secondary align-middle">{{user.teamName}}</span></h2></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="align-middle"><h4>email</h4></td>
+                <td><h2><span class="badge badge-secondary align-middle"> {{user.email}}</span></h2></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isEditModePossible() | async" style="margin-top: 50px"class="float-left">
+      <h3><span (click)="onEditClicked()" class="badge badge-primary align-middle">edit your profile</span></h3>
+    </div>
+
+  </div>
+
