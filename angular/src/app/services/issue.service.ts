@@ -90,7 +90,6 @@ export class IssueService {
       .subscribe(() => {});
   }
 
-
   saveFullIssue(issue: Issue, detail: IssueDetail) {
     let issue_address : string = api_address+issue_endpoint+api_new_keyword;
     let detail_address : string = api_address+detail_endpoint+api_new_keyword;
