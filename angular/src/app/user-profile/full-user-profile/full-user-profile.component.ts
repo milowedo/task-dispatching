@@ -10,9 +10,11 @@ import {User} from '../../entities/user.model';
 })
 export class FullUserProfileComponent implements OnInit {
   user: User = new User(	1	, "John",	"Locke",	"JOHLOC",	"finances",
-  "https://www.eaglestalent.com/blog/wp-content/uploads/2011/10/jay_baer_avatar.jpg","johnlocke@gmail.com");
+  "johnlocke@gmail.com", null);
   pathKey: string  = "";
   editMode: Promise<boolean>;
+  defaultImage = "../../assets/blank-profile-picture.png";
+
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -23,11 +25,15 @@ export class FullUserProfileComponent implements OnInit {
       .subscribe(
         (param : Params) => {
           this.pathKey = param['key'];
+          if(this.userService.user.key == this.pathKey){
+            this.user = this.userService.user;
+            this.editMode = Promise.resolve(true);
+            return;
+          }
           this.userService
             .getUserByUserKey(this.pathKey)
             .subscribe(
               (result) =>{
-                console.log(result);
                 this.user = result;
                 this.editMode = Promise.resolve(!this.userService.isAuthenticated || result.key == this.userService.user.key);
         })

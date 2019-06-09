@@ -7,6 +7,9 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.File;
+import java.io.Serializable;
+import java.sql.Blob;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity(name = "User")
@@ -14,7 +17,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends Resolvable {
+public class User extends Resolvable implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

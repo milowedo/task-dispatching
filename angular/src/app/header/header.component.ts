@@ -6,7 +6,6 @@ import {Issue} from '../entities/issue.model';
 import {LongPoll} from '../globals/LongPoll';
 import {api_address} from '../globals/globals';
 import {IssueService} from '../services/issue.service';
-import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +16,9 @@ export class HeaderComponent implements OnInit{
 
   isCollapsed = true;
   issue : Issue;
-  newIssueArrived = new Subject<Issue>();
   CALL: string =  'issue/subscribe';
   URI:string = api_address;
+  defaultImage = "../../assets/blank-profile-picture.png";
 
   constructor(@Inject(LongPoll) private longPoll : LongPoll,
               private router: Router,

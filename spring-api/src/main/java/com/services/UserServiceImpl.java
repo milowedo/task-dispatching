@@ -64,6 +64,12 @@ public class UserServiceImpl extends ServicePoll implements UserServiceInterface
 
     @Override
     @Transactional
+    public void updateUser(User user) {
+        userDaoInterface.updateUser(user);
+    }
+
+    @Override
+    @Transactional
     public User getUserByKey(String key) {
         return userDaoInterface.getUserByKey(key);
     }

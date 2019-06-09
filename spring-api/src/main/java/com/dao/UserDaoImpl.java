@@ -36,13 +36,26 @@ public class UserDaoImpl implements UserDaoInterface {
 	}
 
 	@Override
+	public void updateUser(User user) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		System.out.println("updating the user: " + user.toString());
+		currentSession.update(user);
+	}
+
+	@Override
 	public User getUser(int theId) {
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		Query<User> query = currentSession.createQuery(
 				"from User where user_id=:userID", User.class);
 		query.setParameter("userID", theId);
-		return query.getSingleResult();
+		User user = null;
+		try {
+			user = query.getSingleResult();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return user;
 	}
 
 	@Override
@@ -61,7 +74,13 @@ public class UserDaoImpl implements UserDaoInterface {
 		Query<User> theQuery =
 				currentSession.createQuery("from User where user_key=:userKEY", User.class);
 		theQuery.setParameter("userKEY", key);
-		return theQuery.getSingleResult();
+		User user = null;
+		try {
+			user = theQuery.getSingleResult();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return user;
 	}
 }
 

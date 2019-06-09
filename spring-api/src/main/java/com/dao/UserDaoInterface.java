@@ -10,4 +10,5 @@ public interface UserDaoInterface {
 	User getUser(int id);
 	void deleteUser(int id);
     User getUserByKey(String key);
+    void updateUser(User user);
 }
