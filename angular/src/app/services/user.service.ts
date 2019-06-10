@@ -25,11 +25,14 @@ export class UserService {
     let address :string = api_address + userByKey_endpoint + userkey;
     console.log(address);
     this.httpClient
-      .get<User>(address)
+      .get<any>(address)
       .subscribe(
         (res) => {
           this.user = res;
-        });
+        },
+        (error1 => {
+          console.log(error1);
+        }));
   }
 
   getUserByUserKey(userkey : string){
@@ -56,7 +59,6 @@ export class UserService {
   }
 
   registerUser(info : RegistrationModel){
-    console.log(info);
     this.httpClient
       .post<LoginModel>(this.REGISTER_API, info)
       .subscribe(
@@ -67,5 +69,16 @@ export class UserService {
           console.log(error);
         }
       );
+  }
+
+  updateUser(updatedUser: User) {
+    let address :string = api_address + user_endpoint;
+    console.log("updating at: "  + address);
+    this.httpClient
+      .post<User>(address, updatedUser)
+      .subscribe(
+        (res) => {},
+        (error1 => console.log("error updating: " + error1))
+      )
   }
 }

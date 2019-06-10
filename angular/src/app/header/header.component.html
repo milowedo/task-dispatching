@@ -55,7 +55,7 @@
            height="42" width="42"
            class=""
            style="border-radius: 50%"
-        [src]="userService.user ? userService.user.image : 'https://experience.sap.com/fiori-design-web/wp-content/uploads/sites/5/2017/02/Avatar-Sizes-Custom-1.png'" alt="user profile">
+          src="{{userService.user ? (userService.user.image ? userService.user.image : defaultImage) : defaultImage}}" alt="user profile">
     </div>
     </div>
   </div>

@@ -8,11 +8,13 @@ import com.exceptionHandlingStuff.UserNotFoundException;
 import com.services.UserServiceInterface;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpSession;
-import java.util.List;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
 
 @RestController
 @RequestMapping("/user")
@@ -39,21 +41,32 @@ public class UserRestController {
 
     //GET USER BY ID
     @GetMapping("/{userID}")
-    public ResponseEntity<User> getUser(@PathVariable int userID){
+    public @ResponseBody ResponseEntity<User> getUser(@PathVariable int userID){
         User returnedUser = userService.getUser(userID);
-//        session.invalidate();
         if(returnedUser !=null){
             return ResponseEntity.ok().body(returnedUser);
         }
         else throw new UserNotFoundException("User not found: " + userID);
     }
 
-    @GetMapping("/key/{userKEY}")
-    public ResponseEntity<User> getUserByKey(@PathVariable String userKEY){
+    @GetMapping(value = "/key/{userKEY}")
+    public @ResponseBody ResponseEntity<User> getUserByKey(@PathVariable String userKEY){
         User value = userService.getUserByKey(userKEY);
         if(value != null){
-            return ResponseEntity.ok().body(value);
+            try{
+                return ResponseEntity.ok().body(value);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
         }else throw new UserNotFoundException("No user with key" + userKEY);
+    }
+
+    @PostMapping(value = "/")
+    public @ResponseBody ResponseEntity<User> updateUser(@RequestBody User user){
+        System.out.println("in edit : " + user.toString());
+        this.userService.updateUser(user);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/register")

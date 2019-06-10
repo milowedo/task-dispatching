@@ -12,8 +12,7 @@
         <img
           width="444" height="444"
           style="border-radius: 8px;"
-          [src]="user ? user.image :
-           'https://experience.sap.com/fiori-design-web/wp-content/uploads/sites/5/2017/02/Avatar-Sizes-Custom-1.png'"
+          src="{{user ? (user.image ? user.image : defaultImage) : defaultImage}}"
           alt="user profile">
 
       </div>
